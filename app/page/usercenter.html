@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app.css" rel="stylesheet" />
+	</head>
+
+	<body id="usercenter">
+	<!--<header class="mui-bar mui-bar-nav head_bg">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
+			<h1 class="mui-title">
+				
+			</h1>
+			<a class="mui-icon mui-icon-chatbubble mui-pull-right color_f"></a>
+	</header>-->
+		<div class="mui-content">
+			<ul class="mui-table-view" >
+				<li class="mui-table-view-cell mui-media head_bg">
+					<a class="" href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
+						<div class="mui-media-body" style="overflow: hidden;">
+							<div class="user_names">
+								<span>愤怒的小鸟</span>
+								<span class="hy">v1会员</span>
+							</div>
+							<div class="user_jf">
+							    <span>积分</span>
+								<span class="f16">20000</span>
+							</div>
+							<div class="user_sc">
+							    <div class="sc_bg">
+							         <span>收藏</span>
+								     <span>0</span>
+							    </div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="order_goods">
+				    <a href="#">
+				        <span class="mui-icon">0</span>
+				        <div class="mui-media-body">订单</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+				    <a href="#">
+				        <span class="mui-icon">0</span>
+				        <div class="mui-media-body">报名活动</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+				    <a href="#">
+				        <span class="mui-icon">0</span>
+				        <div class="mui-media-body">当前服务</div>
+				    </a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 30px;">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right f14">
+						<span class="mui-icon mui-icon-gear f22 mar_rig5"></span>设置
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right f14">
+						<span class="mui-icon mui-icon-info f22 mar_rig5"></span>关于
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 30px;">
+				<li class="mui-table-view-cell f14" style="text-align: center;">退出登录</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		      mui.init();
+		      mui.plusReady(function(){
+		      	document.getElementById("order_goods").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"order.html",
+		               id:"order"
+	       			});
+		        });
+		      })
+ 		</script>
+	</body>
+
+</html>

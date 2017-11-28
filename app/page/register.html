@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css"/>
+		<link href="../css/register.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_b"></a>
+			<h1 class="mui-title">注册</h1>
+			<a class="mui-icon mui-pull-right" id="yyzh" style="font-size: 14px;margin-top: 6px;">已有账号</a>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					<span class="mui-icon mui-icon-closeempty"></span>
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					<span class="mui-icon mui-icon-checkmarkempty"></span>
+				</div>
+				<div class="mui-input-row">
+					<label>确认密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请再次输入密码">
+					<span class="mui-icon gth">!</span>
+				</div>
+				<div class="mui-input-row">
+					<label>验证码</label>
+					<input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入验证码">
+					<span class="mui-icon"><button class="mui-btn mui-btn-warning">发送验证码</button></span>
+				</div>
+			</form>
+			<div class="information_message">*提示消息</div>
+			<div class="mui-content-padded">
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">下一步</button>
+			</div>
+			<div class="mui-content-padded algin_cen">
+				<p>我已阅读<a href="#">xxx条款</a></p>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+		      mui.init();
+		      mui.plusReady(function(){
+		        document.getElementById("yyzh").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"login.html",
+		               id:"login"
+	       			});
+		        });
+		      })
+ 		</script>
+	</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+
+	<body id="activity">
+		<header class="mui-bar mui-bar-nav head_bg">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
+			<h1 class="mui-title color_f">
+				活动
+			</h1>
+		</header>	
+		<div class="mui-content">
+			<!--选项卡-->
+			<div id="segmentedControl" class="mui-segmented-control">
+				<a class="mui-control-item mui-active" href="#quanbu">
+				           全部
+				</a>
+				<a class="mui-control-item" href="#remen">
+					热门
+				</a>
+			</div>
+			<div class="tab_item">
+				<div id="quanbu" class="mui-control-content mui-active">
+				     <div class="hot_activity" id="hot">
+				          <div class="hot_activity_img">
+				              <img src="../img/01_02.png"/>
+				              <p class="hot_activity_tit"><span class="fl">欢乐一夏，畅游日韩</span><span class="fr">&yen;2999</span></p>
+				          </div>
+				          <div class="hot_activity_info">
+				          	  <p style="color: #333;">6天5晚自由行，管吃包住省心出发</p>
+				          	  <p class="biaoqian"><span class="fl"><a href="">北京出发</a><a href="">免签</a></span><span class="fr">120人已体验</span></p>
+				          </div>
+				     </div>
+				     <div class="tw_list">
+				     	<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
+									<div class="mui-media-body">
+										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
+										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
+									</div>
+									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../img/muwu.jpg">
+									<div class="mui-media-body">
+										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
+										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
+									</div>
+									<span class="mui-icon-extra mui-icon-extra-heart-filled xh"></span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../img/shuijiao.jpg">
+									<div class="mui-media-body">
+										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
+										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
+									</div>
+									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
+								</a>
+							</li>
+						</ul>
+				     </div>
+				</div>
+				<div id="remen" class="mui-control-content">
+				     <div class="hot_activity">
+				          <div class="hot_activity_img">
+				              <img src="../img/cbd.jpg"/>
+				              <p class="hot_activity_tit"><span class="fl">欢乐一夏，畅游日韩</span><span class="fr">&yen;2999</span></p>
+				          </div>
+				          <div class="hot_activity_info">
+				          	  <p style="color: #333;">6天5晚自由行，管吃包住省心出发</p>
+				          	  <p class="biaoqian"><span class="fl"><a href="">北京出发</a><a href="">免签</a></span><span class="fr">120人已体验</span></p>
+				          </div>
+				     </div>
+				     <div class="tw_list">
+				     	<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
+									<div class="mui-media-body">
+										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
+										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
+									</div>
+									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="../img/muwu.jpg">
+									<div class="mui-media-body">
+										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
+										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
+									</div>
+									<span class="mui-icon-extra mui-icon-extra-heart-filled xh"></span>
+								</a>
+							</li>
+						</ul>
+				     </div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		      mui.init();
+		      mui.plusReady(function(){
+		        document.getElementById("hot").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"activity-info.html",
+		               id:"activity-info"
+	       			});
+		        });
+		      })
+ 		</script>
+	</body>
+
+</html>

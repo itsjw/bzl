@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	</head>
+
+	<body id="activity_info">
+		<header class="mui-bar mui-bar-nav head_bg">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
+			<h1 class="mui-title color_f">
+				活动详情
+			</h1>
+		</header>	
+		<div class="mui-content">
+		     <div class="hot_activity">
+		          <div class="hot_activity_img">
+		              <img src="../img/01_02.png"/>
+		              <p class="hot_activity_tit"><span class="fl">欢乐一夏，畅游日韩</span><span class="fr">&yen;2999</span></p>
+		          </div>
+		          <div class="hot_activity_info">
+		          	  <p style="color: #333;">6天5晚自由行，管吃包住省心出发</p>
+		          	  <p class="biaoqian"><span class="fl"><a href="">截止日期</a><a href="">2017年12月12日</a></span><span class="fr">120人已体验</span></p>
+		          </div>
+		     </div>
+		     <div class="travel_agency">
+		          <div class="travel_agency_name fl"><span><img src="../img/01home_17.png"/></span>中国某某某旅行社</div>
+		          <p class="travel_agency_phone fr" id="tel"><span class="mui-icon mui-icon-phone"></span>电话咨询</p>
+		     </div>
+		     <ul class="tab_list">
+		          <li class="menu_item"><a href="javascript:void(0)" class=" active">活动详情</a></li>
+		          <li class="menu_item"><a href="javascript:void(0)">评价</a></li>
+		          <li class="menu_item"><a href="javascript:void(0)">活动须知</a></li>
+		     </ul>
+			<div class="hot_activity_text">
+			    <div class="hot_activity_panel" id="hdxq">
+				     <div class="panel_tit"><h4><span></span>活动详情</h4></div>
+				     <div class="panel_text">
+				          <div class="panel_user">
+				               <span class="user_img"><img src="../img/01home_28.png"/></span></span>
+				               <span class="user_name">小猪快跑</span>
+				          </div>
+				          <div class="panel_info">
+				               <ul class="hot_list">
+				                   <li><span class="mui-icon mui-icon-star"></span>【奢华体验】丽丽岛两晚沙屋体验丽丽岛两晚沙屋体验丽丽岛两晚沙屋体验</li>
+				                   <li><span class="mui-icon mui-icon-star"></span>【奢华体验】琉璃岛两晚沙屋体验丽丽岛两晚沙屋体验丽丽岛两</li>
+				                   <li><span class="mui-icon mui-icon-star"></span>【奢华体验】乌龙岛两晚沙屋体验丽丽岛两晚沙屋</li>
+				               </ul>
+						  </div>
+				     </div>
+				</div>
+				<div class="hot_activity_panel" id="pj">
+				     <div class="panel_tit"><h4><span></span>评价</h4></div>
+				     <div class="panel_text">
+				          <div class="panel_user">
+				               <span class="user_img"><img src="../img/cbd.jpg"/></span></span>
+				               <span class="user_name">小猪快跑</span>
+				          </div>
+				          <div class="panel_info">
+				                           卖家的服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。
+						  </div>
+						  <p class="panel_time">2017-08-09 08:12</p>
+						  <div class="panel_btn">
+						        <button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">
+									查看全部评价
+								</button>
+						  </div>
+				     </div>
+				</div>
+				<div class="hot_activity_panel" id="hdxz">
+				     <div class="panel_tit"><h4><span></span>活动须知</h4></div>
+				     <div class="panel_text">
+				          <div class="panel_info">
+				                <p>***卖家的服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+				                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+						  </div>
+						   <div class="look_gd">查看更多<span class="mui-icon mui-icon-arrowright"></span></div>
+				     </div>
+				</div>
+				<div class="hot_activity_panel">
+				     <div class="panel_tit"><h4><span></span>退改规则</h4></div>
+				     <div class="panel_text">
+				          <div class="panel_info">
+				                <p>***湖广会馆泛黄发花福冈黄蜂更好发挥过股份回购很反感海关法划分干活干活</p>
+				                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+						  </div>
+				     </div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+		     <div class="footer_count">2期剩余<span>123</span> 人次</div>
+		     <div class="footer_btn">
+		         <span class="btn_bm">立即报名</span>
+		     </div>
+		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		   $(".menu_item").click(function(){
+		       $(this).find('a').addClass("active").parent().siblings().find("a").removeClass("active");
+		       console.log($(this).index());
+		       var top=$(".hot_activity_panel").eq($(this).index()).offset().top;
+		       document.body.scrollTop = top-50;
+		   })
+		   document.getElementById("tel").addEventListener('tap', function() {
+			    plus.device.dial("10086");
+		   });
+	   </script>
+	</body>
+
+</html>

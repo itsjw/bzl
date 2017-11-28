@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/layui.css"/>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css"/>
+		<link href="../css/register.css" rel="stylesheet" />
+	</head>
+
+	<body id="applyfVip">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_b"></a>
+			<h1 class="mui-title">VIP申请</h1>
+			<a class="mui-icon mui-pull-right" style="font-size: 14px;margin-top: 6px;" id="headImage">跳过此步</a>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>身份证</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入身份证账号">
+					<span class="mui-icon mui-icon-close"></span>
+				</div>
+			</form>
+			<div class="upload_file">
+                <div class="upload_info"><span class="fl">上传证件照片</span><span id="uplodImg" class="fr">点击上传</span></div>
+                <div class="audit_time">审核时间1-5日<a href="">（需上传证件正反面）</a></div>
+                <div class="layui-upload">
+				    <blockquote class="layui-elem-quote layui-quote-nm ylt">
+				               预览图：
+				    <div class="layui-upload-list" id="upimg"></div>
+				    </blockquote>
+				</div>
+			</div>
+			<div class="information_message">*图片是否上传提示消息</div>
+			<div class="mui-content-padded">
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">下一步</button>
+			</div>
+		</div>
+		<div class="modal">
+			<div class="modal_info">
+				<h4>注册成功</h4>
+				<p>VIP&nbsp;&nbsp;请耐心等待审核</p>
+				<div><img src="../img/00-04tz_03.png"/></div>
+				<button class="mui-btn mui-btn-primary">登录</button>
+			</div>
+		</div>
+		<script src="../js/mui.js"></script> 
+        <script src="../js/layui.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+        	layui.use('upload', function(){
+			  var $ = layui.jquery
+			  ,upload = layui.upload;
+			    //多图片上传
+				  upload.render({
+				    elem: '#uplodImg'
+				    ,url: ''
+				    ,multiple: true
+				    ,before: function(obj){
+				      //预读本地文件示例，不支持ie8
+				    obj.preview(function(index, file, result){
+				        $('#upimg').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+				      });
+				    }
+				    ,done: function(res){
+				      //上传完毕
+				      $(".information_message").html("*图片上传成功");
+				    }
+				     ,error: function(){
+				      //请求异常回调
+				      $(".information_message").html("*图片上传失败");
+				    }
+				  });
+			  })
+        </script>
+	</body>
+
+</html>

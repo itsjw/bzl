@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			header{
+				display: none;
+			}
+			.show{
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<header class="mui-bar mui-bar-nav show">
+			<h1 class="mui-title">首页1</h1>
+		</header>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">首页2</h1>
+		</header>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">首页3</h1>
+		</header>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">首页4</h1>
+		</header>-->
+		<nav class="mui-bar mui-bar-tab foot">
+			<a class="mui-tab-item mui-active" data-index="0">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" data-index="1">
+				<span class="mui-icon mui-icon-phone"></span>
+				<span class="mui-tab-label">周边</span>
+			</a>
+			<a class="mui-tab-item" data-index="2">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">购物车</span>
+			</a>
+			<a class="mui-tab-item" data-index="3">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				/**
+				 * 当前窗口对象，即父窗口；
+				 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.currentWebview
+				 */
+				var self = plus.webview.currentWebview();
+				// 子窗口地址数组
+				var subpages = ["home.html", "map.html", "buy-car.html", "usercenter.html"];
+				// 子窗口样式
+				var subStyles = {
+					top: "0px",
+					bottom: "50px"
+				};
+				// 子窗口数量
+				var subLen = subpages.length;
+				// 子窗口对象数组
+				var subWvs = [];
+//				// 标题栏
+//				var title = document.querySelector(".mui-title");
+				// 底部选项
+				var tabs = document.querySelectorAll(".mui-tab-item");
+				// 底部文字
+				var labels = document.querySelectorAll(".mui-tab-label");
+				// 当前页面索引，初始化为0；
+				var activeIndex = 0;
+				// 目标页面索引，初始化为当前页面索引；
+				var targetIndex = activeIndex;
+				// 创建子页面
+				for(var i = 0; i < subLen; i++) {
+					/**
+					 * 创建窗口对象，并将索引做为额外的参数传递；
+					 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.create
+					 */
+					var subWv = plus.webview.create(subpages[i], cutWebviewId(subpages[i]), subStyles, {
+						index: i
+					});
+					// 窗口对象添加至数组
+					subWvs.push(subWv);
+					if(i > 0) {
+						/**
+						 * 隐藏非第一页的窗口对象
+						 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.hide
+						 */
+						subWv.hide("none");
+					}
+					/**
+					 * 向父窗口添加子窗口
+					 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.append
+					 */
+					self.append(subWv);
+				}
+				// 底部选项卡点击切换事件
+				for(var j = 0, jlen = tabs.length; j < jlen; j++) {
+					tabs[j].addEventListener("tap", function() {
+						// 获取当前结点的索引
+						targetIndex = this.getAttribute("data-index");
+						// 转换为number类型
+						targetIndex = parseInt(targetIndex, 10);
+						if(targetIndex == activeIndex) {
+							return;
+						}
+						// 切换页面
+//						alert(targetIndex+'--'+activeIndex);
+						if(activeIndex==3){
+							$("header").eq(0).addClass("show").siblings("header").removeClass("show");
+						}else{
+						    $("header").eq(targetIndex).addClass("show").siblings("header").removeClass("show");	
+						}
+						switchPage("tap", activeIndex, targetIndex);
+					});
+				}
+				// 子页面滑动切换事件
+				window.addEventListener("swipe_event", function(event) {
+					// 获取方向以及索引
+					var direction = event.detail.direction;
+					activeIndex = event.detail.index;
+					if(direction == "left") {
+						// 如果是最后一个页面，则不做左滑切换；
+						if(activeIndex == subLen - 1) {
+							console.log("最右边一页了");
+							return;
+						}
+						// 目标页面的索引为后面一位
+						targetIndex = activeIndex + 1;
+					} else {
+						// 如果是第一个页面，则不做右滑切换；
+						if(activeIndex == 0) {
+							console.log("最左边一页了");
+							return;
+						}
+						// 目标页面的索引为前面一位
+						targetIndex = activeIndex - 1;
+					}
+					// 切换页面
+					switchPage("switch", activeIndex, targetIndex);
+				});
+
+				/**
+				 * 切换页面
+				 * @param {String} _event 事件类型
+				 * @param {Number} _active 当前页面索引
+				 * @param {Number} _target 目标页面索引
+				 */
+				function switchPage(_event, _active, _target) {
+					/**
+					 * 目标页面展示
+					 * http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.show
+					 */
+					subWvs[_target].show("fade-in");
+//					页面头部变换
+                   $("header").eq(_target).addClass("show").siblings("header").removeClass("show");
+					// 顶部文字替换
+//					title.innerText = labels[_target].innerText;
+					// 如果是滑动事件，则手动切换高亮选项；
+					if(_event == "switch") {
+						tabs[_active].classList.remove("mui-active");
+						tabs[_target].classList.add("mui-active");
+					}
+					// 之前展示的页面隐藏
+					subWvs[_active].hide("none");
+					// 更新当前页索引
+					activeIndex = _target;
+				}
+			});
+
+			/**
+			 * 截取url地址，获取窗口的id；
+			 * @param {String} url html文件的路径
+			 * @param {String} wvId webviewObject的id
+			 */
+			function cutWebviewId(url) {
+				var startIndex = url.lastIndexOf("/");
+				var endIndex = url.lastIndexOf(".html");
+				var wvId = url.substring(startIndex + 1, endIndex);
+				return wvId;
+			}
+		</script>
+	</body>
+
+</html>

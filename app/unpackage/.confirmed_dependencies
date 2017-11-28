@@ -1,0 +1,366 @@
+{
+  "home.html": {
+    "resources": [
+      "js/sub.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "img/shuijiao.jpg",
+      "img/muwu.jpg",
+      "img/yuantiao.jpg",
+      "img/cbd.jpg"
+    ],
+    "refer": []
+  },
+  "main.html": {
+    "resources": [
+      "home.html",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/jquery-1.11.3.js"
+    ],
+    "refer": [
+      "phone.html",
+      "home.html",
+      "email.html",
+      "gear.html"
+    ]
+  },
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "main.html",
+      "page/main.html",
+      "page/apply-vip.html",
+      "page/new_file.html",
+      "page/login-mode.html",
+      "page/code.html",
+      "page/home.html",
+      "page/barcode_scan.html",
+      "page/new_file1.html"
+    ]
+  },
+  "gear.html": {
+    "resources": [
+      "img/shuijiao.jpg",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/sub.js"
+    ],
+    "refer": []
+  },
+  "phone.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "email.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "page/main.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/jquery-1.11.3.js",
+      "css/mui.min.css",
+      "page/home.html",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "page/gear.html",
+      "page/phone.html",
+      "page/email.html",
+      "page/home.html",
+      "page/usercenter.html",
+      "page/map.html",
+      "page/activity.html",
+      "page/serve.html",
+      "page/buy-car.html"
+    ]
+  },
+  "page/home.html": {
+    "resources": [
+      "css/mui.min.css",
+      "js/sub.js",
+      "img/01ýu_09 - o,.png",
+      "img/01ýu_29.png",
+      "img/01ýu_21 - o,.png",
+      "img/01ýu_11 - o,.png",
+      "img/01ýu_28.png",
+      "img/01ýu_07 - o,.png",
+      "css/icons-extra.css",
+      "img/01ýu_05 - o,.png",
+      "img/01ýu_02.png",
+      "css/app.css",
+      "img/01ýu_17.png",
+      "img/01ýu_23.png",
+      "img/03-02;ýýý_02.png",
+      "fonts/mui-icons-extra.ttf",
+      "img/headbg.png",
+      "img/01_02.png",
+      "img/01home_17.png",
+      "img/01home_23.png",
+      "img/01home_29.png",
+      "img/01home_11 .png",
+      "img/01home-09.png",
+      "img/01hoem_21.png",
+      "img/muwu.jpg",
+      "img/01home_28.png",
+      "img/01home_05.png",
+      "img/01home_07.png",
+      "js/mui.min.js",
+      "img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg",
+      "img/01ýu_09 - o,.png",
+      "img/01ýu_29.png",
+      "img/01ýu_21 - o,.png",
+      "img/01ýu_11 - o,.png",
+      "img/01ýu_28.png",
+      "img/01ýu_07 - o,.png",
+      "img/01ýu_05 - o,.png",
+      "img/01ýu_02.png",
+      "img/01ýu_17.png",
+      "img/01ýu_23.png",
+      "img/03-02;ýýý_02.png",
+      "js/app.js"
+    ],
+    "refer": [
+      "page/activity.html",
+      "page/serve.html",
+      "page/barcode_scan.html"
+    ]
+  },
+  "page/email.html": {
+    "resources": [
+      "css/mui.min.css",
+      "img/03-02;ýýý_02.png",
+      "fonts/mui-icons-extra.ttf",
+      "js/sub.js",
+      "js/mui.min.js",
+      "img/03-02;ýýý_02.png"
+    ],
+    "refer": []
+  },
+  "page/gear.html": {
+    "resources": [
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "page/apply-vip.html": {
+    "resources": [
+      "css/global.css",
+      "fonts/mui.ttf",
+      "css/register.css",
+      "css/mui.min.css",
+      "js/uploadImg.js",
+      "img/01ýu_02 - o,.png",
+      "img/01home_29.png",
+      "img/00-04tz_03.png",
+      "img/01home_28.png",
+      "js/lay/modules/layer.js",
+      "js/lay/modules/jquery.js",
+      "js/lay/modules/upload.js",
+      "js/layui.js",
+      "js/mui.js",
+      "css/layui.css",
+      "page/new.html",
+      "img/01ýu_02 - o,.png"
+    ],
+    "refer": []
+  },
+  "page/new_file.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/lay/modules/layer.js",
+      "js/lay/modules/jquery.js",
+      "js/lay/modules/upload.js",
+      "js/layui.js",
+      "js/mui.js",
+      "css/mui.css",
+      "css/layui.css"
+    ],
+    "refer": []
+  },
+  "page/usercenter.html": {
+    "resources": [
+      "img/20130224100054337.png",
+      "img/cbd.jpg",
+      "css/mui.min.css",
+      "js/sub.js",
+      "js/mui.min.js",
+      "img/headbg.png"
+    ],
+    "refer": [
+      "page/order.html"
+    ]
+  },
+  "page/map.html": {
+    "resources": [
+      "img/04ýý~_02.png",
+      "css/global.css",
+      "js/sub.js",
+      "css/app.css",
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "img/04mdcz_02.png",
+      "img/04ýý~_02.png",
+      "img/headbg.png"
+    ],
+    "refer": []
+  },
+  "page/activity.html": {
+    "resources": [
+      "img/shuijiao.jpg",
+      "img/muwu.jpg",
+      "js/sub.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/headbg.png",
+      "fonts/mui-icons-extra.ttf",
+      "img/cbd.jpg",
+      "css/icons-extra.css"
+    ],
+    "refer": [
+      "page/activity-info.html"
+    ]
+  },
+  "page/login-mode.html": {
+    "resources": [
+      "css/login.css",
+      "css/global.css",
+      "fonts/mui.ttf",
+      "img/00dl_03.png",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "page/login.html",
+      "page/dynamic-login.html",
+      "page/register.html"
+    ]
+  },
+  "page/login.html": {
+    "resources": [
+      "css/login.css",
+      "css/app.css",
+      "css/global.css",
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "page/login-successful.html",
+      "page/apply-vip.html"
+    ]
+  },
+  "page/dynamic-login.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/login.css",
+      "css/app.css",
+      "css/global.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": [
+      "page/dynamic-login-yzm.html"
+    ]
+  },
+  "page/register.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/global.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/register.css"
+    ],
+    "refer": [
+      "page/apply-vip.html",
+      "page/login.html"
+    ]
+  },
+  "page/login-successful.html": {
+    "resources": [
+      "img/00-04tz_03.png",
+      "css/login.css",
+      "css/mui.min.css",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "page/main.html"
+    ]
+  },
+  "page/dynamic-login-yzm.html": {
+    "resources": [
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "page/activity-info.html": {
+    "resources": [
+      "js/sub.js",
+      "js/mui.min.js",
+      "js/jquery-1.11.3.js",
+      "img/01home_28.png",
+      "css/mui.min.css",
+      "css/icons-extra.css"
+    ],
+    "refer": []
+  },
+  "page/serve.html": {
+    "resources": [
+      "js/sub.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/icons-extra.css"
+    ],
+    "refer": []
+  },
+  "page/buy-car.html": {
+    "resources": [
+      "img/foot.jpg",
+      "js/sub.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "img/headbg.png",
+      "js/jquery-1.11.3.js"
+    ],
+    "refer": []
+  },
+  "page/order.html": {
+    "resources": [
+      "img/plan.png",
+      "js/sub.js",
+      "js/mui.min.js",
+      "img/mydd.png",
+      "css/mui.min.css",
+      "img/plan2.png",
+      "img/plan1.png"
+    ],
+    "refer": []
+  },
+  "page/code.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/app.js"
+    ],
+    "refer": []
+  },
+  "page/barcode_scan.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ]
+  }
+}

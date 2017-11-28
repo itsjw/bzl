@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-lef color_b"></a>
+			<h1 class="mui-title">登录</h1>
+		</header>
+		<div class="mui-content">
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+			</form>
+			<div class="mui-content-padded">
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+				<div class="link-area"><a id='reg'>会员注册</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				</div>
+			</div>
+			<div class="mui-content-padded oauth-area">
+
+			</div>
+			<!--<div class="forgetPassword_type">
+				<ul>
+					<li>短信验证登录</li>
+					<li>找回密码</li>
+				</ul>
+				<div class="cancel">取消</div>
+			</div>-->
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+		      mui.init();
+		      mui.plusReady(function(){
+		        document.getElementById("login").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"login-successful.html",
+		               id:"login-successful"
+	       			});
+		        });
+		        document.getElementById("reg").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"apply-vip.html",
+		               id:"apply-vip"
+	       			});
+		        });
+		        
+		        　document.getElementById('forgetPassword').addEventListener('tap', function() { 
+				　　　　if (mui.os.plus) { 
+				　　　　　　var a = [{ 
+				　　　　　　　　title: "短信验证码登录"          //这些都是可以点击的选项的内容
+				　　　　　　}, { 
+				　　　　　　　　title: "找回密码" 
+				　　　　　　}]; 
+				　　　　　　plus.nativeUI.actionSheet({ 
+				　　　　　　　　title: "请选择登录方式",           //这里就是这个弹窗的title
+				　　　　　　　　cancel: "取消",                     //取消按钮
+				　　　　　　　　buttons: a 
+				　　　　　　}, function(b) { /*actionSheet 按钮点击事件*/ 
+				　　　　　　　　//这里面就是触发的事件，比如想做一个选择性别的弹窗，就可以通过a[b.index].title来获取当前点击了男还是女，注意，此处的b.index是从1开始的。要从0开始的话，要记得减1.
+				            var tit=a[b.index-1].title;
+				            if(tit=="短信验证码登录"){
+				            	mui.openWindow({
+					               url:"dynamic-login.html",
+					               id:"dynamic-login"
+				       			});
+				            }else if(tit=="找回密码"){
+				            	alert("跳转找回密码页面");
+				            }
+				　　　　　　}) 
+				　　　　} 
+				　　}, false);
+		      })
+ 		</script>
+	</body>
+
+</html>
