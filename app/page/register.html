@@ -41,12 +41,13 @@
 			</form>
 			<div class="information_message">*提示消息</div>
 			<div class="mui-content-padded">
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">下一步</button>
+				<button type="button" id="next" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">下一步</button>
 			</div>
 			<div class="mui-content-padded algin_cen">
 				<p>我已阅读<a href="#">xxx条款</a></p>
 			</div>
 		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.min.js"></script>
 		<script>
 		      mui.init();
@@ -55,6 +56,12 @@
 		           mui.openWindow({
 		               url:"login.html",
 		               id:"login"
+	       			});
+		        });
+		        document.getElementById("next").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"login-successful.html",
+		               id:"login-successful"
 	       			});
 		        });
 		      })

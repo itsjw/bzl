@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.poppicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/global.css"/>
+		<link href="../css/app.css" rel="stylesheet" />
+	</head>
+
+	<body id="balance01">
+	<header class="mui-bar mui-bar-nav" style="background: #000;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
+			<h1 class="mui-title color_f">
+				结算
+			</h1>
+	</header>
+		<div class="mui-content">
+				<ul class="mui-table-view balance1">
+					<li class="mui-table-view-cell takeUser">	
+						<div class="mui-input-row">
+							<label>收货人</label>
+							<input name="takeUser" type="text" class="mui-input-clear mui-input" placeholder="">
+						</div>
+					</li>
+					<li class="mui-table-view-cell takeUser">	
+						<div class="mui-input-row">
+							<label>联系电话</label>
+							<input name="phone" type="text" class="mui-input-clear mui-input" placeholder="">
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="fl">所在地区：</span><span class="fl" id="cityResult3"></span><span id="showCityPicker3" class="fr mar_rig20 color_b">请选择</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="fl">街道：</span><span class="fr mar_rig20 color_b">请选择</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell takeUser">
+						<textarea class="form" rows="2" placeholder="请写详细地址不少于5个字"></textarea>
+					</li>
+				</ul>
+				<ul class="mui-table-view mart10">
+					<li class="mui-table-view-cell f14">
+						<span>设置为常用地址</span>
+						<div class="mui-switch mui-switch-mini mui-active">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			<div class="balance01_foot">
+				<button id="zhifu" class="mui-btn mui-btn-block color_f f16">确认支付 <span>&yen;99</span></button>
+			</div>
+		</div>
+		<!--支付弹框-->
+		<div id="zf_model">
+			<div class="zfmodel">
+		         <div class="model_head">
+		         	请选择支付方式
+		         	<span class="mui-icon mui-icon-closeempty" id="close"></span>
+		         </div>
+		         <div class="model_body">
+		         	<ul class="mui-table-view balance1">
+						<li class="mui-table-view-cell">
+							<div class="mui-input-row mui-radio">
+								<label><span><img src="../img/zfb.png"/></span>支付宝</label>
+								<input name="radio" type="radio">
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-input-row mui-radio">
+								<label><span><img src="../img/wx.png"/></span>微信</label>
+								<input name="radio" type="radio">
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							<div class="mui-input-row mui-radio">
+								<label><span><img src="../img/yl.png"/></span>银联</label>
+								<input name="radio" type="radio">
+							</div>
+						</li>
+					</ul>
+		         </div>
+		         <div class="model_foot">
+		         	<button type="button" id="mmzf" class="mui-btn mui-btn-primary mui-btn-block">免密支付<span>&yen;99</span></button>
+		         </div>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		//支付遮罩层
+		$("#zhifu").click(function(){
+			$("#zf_model").fadeIn();
+		})
+		$("#mmzf").click(function(){
+			$("#zf_model").fadeOut();
+		})
+		$("#close").click(function(){
+			$("#zf_model").fadeOut();
+		})
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	  
+	    document.getElementById("mmzf").addEventListener("tap",function(){
+			 mui.openWindow({
+               url:"payment-completion.html",
+               id:"payment-completion"
+   			});
+	    })
+	    
+	 
+			//-----------------------------------------
+			//					//级联示例
+			var cityPicker3 = new mui.PopPicker({
+				layer: 3
+			});
+			cityPicker3.setData(cityData3);
+			var showCityPickerButton = document.getElementById('showCityPicker3');
+			var cityResult3 = document.getElementById('cityResult3');
+			showCityPickerButton.addEventListener('tap', function(event) {
+				cityPicker3.show(function(items) {
+					cityResult3.innerText = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+					//返回 false 可以阻止选择框的关闭
+					//return false;
+				});
+			}, false);
+	    
+		</script>
+	</body>
+
+</html>

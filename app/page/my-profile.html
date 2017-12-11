@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/global.css"/>
+		<link href="../css/app.css" rel="stylesheet" />
+	</head>
+
+	<body id="my_profile">
+	<header class="mui-bar mui-bar-nav" style="background: #000;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
+			<h1 class="mui-title color_f">
+				我的资料
+			</h1>
+	</header>
+		<div class="mui-content">
+			<div class="my_profile_tit">上传头像并完善个人信息即可获得积分~</div>
+			<ul class="mui-table-view balance1 mart10">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="javascript:void(0)">
+						<span class="fl tx">头像</span><span class="fr mar_rig20 color_b" id="head"><img id="head-img1" src="../img/01home_29.png"/></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell profiles">
+					<a class="mui-navigate-right" href="javascript:void(0)">
+						<div class="mui-input-row">
+							<label>昵称</label>
+							<input name="username" type="text" class="mui-input-clear mui-input" placeholder="嘻嘻哈哈">
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell profiles">
+					<a class="mui-navigate-right" href="javascript:void(0)">
+						<div class="mui-input-row">
+							<label>性别</label>
+							<input name="sex" type="text" class="mui-input-clear mui-input" placeholder="女">
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell profiles">
+					<a class="mui-navigate-right" href="javascript:void(0)">
+						<div class="mui-input-row">
+							<label>生日</label>
+							<input name="birthday" type="text" class="mui-input-clear mui-input" placeholder="日期格式为2007-08-01">
+						</div>
+					</a>
+				</li>
+			</ul>            
+			
+			<div id="save">
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-block" id="login">保存资料</button>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/uploadImg.js" type="text/javascript" charset="utf-8"></script>
+		
+
+	</body>
+
+</html>

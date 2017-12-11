@@ -37,17 +37,18 @@
 			</div>
 			<div class="information_message">*图片是否上传提示消息</div>
 			<div class="mui-content-padded">
-				<button type="button" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">下一步</button>
+				<button type="button" id="next" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">下一步</button>
 			</div>
 		</div>
 		<div class="modal">
 			<div class="modal_info">
 				<h4>注册成功</h4>
 				<p>VIP&nbsp;&nbsp;请耐心等待审核</p>
-				<div><img src="../img/00-04tz_03.png"/></div>
-				<button class="mui-btn mui-btn-primary">登录</button>
+				<div><img src="../img/00-03-02_03.png"/></div>
+				<button class="mui-btn mui-btn-primary" id="dl">登录</button>
 			</div>
 		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.js"></script> 
         <script src="../js/layui.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
@@ -75,6 +76,15 @@
 				    }
 				  });
 			  })
+        	 mui.init();
+		      mui.plusReady(function(){
+		        document.getElementById("next").addEventListener('tap',function(){
+		           $(".modal").fadeIn();
+		        });
+		        document.getElementById("dl").addEventListener('tap',function(){
+		           $(".modal").fadeOut();
+		        });
+		      })
         </script>
 	</body>
 

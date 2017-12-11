@@ -1,49 +1,29 @@
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.min.css" rel="stylesheet" />
-		<style type="text/css">
-			header{
-				display: none;
-			}
-			.show{
-				display: block;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
 	</head>
 
-	<body>
-		<!--<header class="mui-bar mui-bar-nav show">
-			<h1 class="mui-title">首页1</h1>
-		</header>
-		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">首页2</h1>
-		</header>
-		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">首页3</h1>
-		</header>
-		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">首页4</h1>
-		</header>-->
+	<body id="main">
 		<nav class="mui-bar mui-bar-tab foot">
 			<a class="mui-tab-item mui-active" data-index="0">
-				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-icon icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
 			<a class="mui-tab-item" data-index="1">
-				<span class="mui-icon mui-icon-phone"></span>
+				<span class="mui-icon icon-perimeter"></span>
 				<span class="mui-tab-label">周边</span>
 			</a>
 			<a class="mui-tab-item" data-index="2">
-				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-icon icon-buycar"></span>
 				<span class="mui-tab-label">购物车</span>
 			</a>
 			<a class="mui-tab-item" data-index="3">
-				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-icon icon-user"></span>
 				<span class="mui-tab-label">我的</span>
 			</a>
 		</nav>
@@ -173,6 +153,22 @@
 					subWvs[_active].hide("none");
 					// 更新当前页索引
 					activeIndex = _target;
+				}
+				
+				//点击退出app
+				var first = null;
+				mui.back = function() {
+					if (!first) {
+						first = new Date().getTime();
+						plus.nativeUI.toast(再按一次退出应用);
+						setTimeout(function() {
+							first = null;
+						}, 1000);
+					} else {
+						if (new Date().getTime() - first<1000) {
+							plus.runtime.quit();
+						}
+					}
 				}
 			});
 

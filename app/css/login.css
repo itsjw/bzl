@@ -31,8 +31,21 @@
 }
 .logMode_btn .mar_top{
 	margin-top: 10%;
+	border-radius: 7px;
 }
-  
+#login{
+	background: url(../img/btn01@3X.png) no-repeat;
+	background-size: 100% 100%;
+	border: none;
+}
+#dt_login{
+	background: url(../img/btn02@3X.png) no-repeat;
+	background-size: 100% 100%;
+	border: none;
+}
+
+
+
   /*login页面*/
          .area {
 				margin: 20px auto 0px auto;
@@ -200,6 +213,12 @@
 }
 .login_success_img img{
 	width: 95%;
+}
+.login_success_gifimg{
+	text-align: center;
+}
+.login_success_gifimg img{
+	width: 85%;
 }
 #login_success .squer_primary{
 	background:  #007aff;

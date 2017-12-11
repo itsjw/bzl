@@ -15,7 +15,7 @@
 			<a class="mui-icon mui-icon-extra mui-icon-extra-sweep mui-pull-left color_f" id="barcode_scan"></a>
 			<h1 class="mui-title">
 				<div class="mui-input-row mui-search">
-				    <input type="search" class="mui-input-clear" placeholder="">
+				    <input type="search" id="search_input" class="mui-input-clear" placeholder="">
 				</div>
 			</h1>
 			<a class="mui-icon mui-icon-chatbubble mui-pull-right color_f"></a>
@@ -26,25 +26,25 @@
 			</div>
 			<ul class="mui-table-view mui-grid-view mui-grid-9">
 				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3" id="fuwu">
-				    <a href="#">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon"><img src="../img/01home_05.png"/></span>
 				        <div class="mui-media-body">服务</div>
 				    </a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3" id="huodong">
-				    <a href="#">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon"><img src="../img/01home_07.png"/></span>
 				        <div class="mui-media-body">活动</div>
 				    </a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3" id="lycp">
-				    <a href="#">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon"><img src="../img/01home-09.png"/></span>
 				        <div class="mui-media-body">旅游产品</div>
 				    </a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3" id="fjmd">
-				    <a href="#">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon"><img src="../img/01home_11 .png"/></span>
 				        <div class="mui-media-body">附近门店</div>
 				    </a>
@@ -54,8 +54,8 @@
 				<div class="bzkx_left"><img src="../img/01home_17.png"/></div>
 				<div class="bzkx_rig">
 					<ul class="bzkx_list">
-						<li><a href="">尼泊尔个人旅游签证-停留30天</a></li>
-						<li><a href="">南京大排档来了-停留30天</a></li>
+						<li class="bzkx_item"><a href="javascript:void(0)">尼泊尔个人旅游签证-停留30天</a></li>
+						<li class="bzkx_item"><a href="javascript:void(0)">南京大排档来了-停留30天</a></li>
 					</ul>
 				</div>
 			</div>
@@ -71,10 +71,10 @@
 			</div>
 			<div class="tab_item">
 				<div id="jpfu" class="mui-control-content mui-active">
-					<ul class="mui-table-view mui-grid-view">
-					    <li class="mui-table-view-cell mui-media mui-col-xs-6">
+					<ul class="mui-table-view mui-grid-view" id="jpfw_list">
+					    <!--<li class="mui-table-view-cell mui-media mui-col-xs-6 fw_item">
 					        <div class="bgf">
-					        	<a href="#">
+					        	<a href="javascript:void(0)">
 						            <img class="mui-media-object" src="../img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg">
 						            <div class="object-info">陆剑歌如约泛光灯凡是看过咯上分公司里的歌</div>
 						            <div class="buy_count">
@@ -83,92 +83,96 @@
 						            </div>
 						        </a>
 					        </div>
-					    </li>
-					    <li class="mui-table-view-cell mui-media mui-col-xs-6">
-					        <div class="bgf">
-					        	<a href="#">
-						            <img class="mui-media-object" src="../img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg">
-						            <div class="object-info">陆剑歌如约泛光灯凡是看过咯上分公司里的歌</div>
-						            <div class="buy_count">
-						            	<span class="fl color_red f16"> &yen;466</span>
-						            	<span class="fr color_b">1.9万人购买</span>
-						            </div>
-						        </a>
-					        </div>
-					    </li>
-					    <li class="mui-table-view-cell mui-media mui-col-xs-6">
-					        <div class="bgf">
-					        	<a href="#">
-						            <img class="mui-media-object" src="../img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg">
-						            <div class="object-info">陆剑歌如约泛光灯凡是看过咯上分公司里的歌</div>
-						            <div class="buy_count">
-						            	<span class="fl color_red f16"> &yen;466</span>
-						            	<span class="fr color_b">1.9万人购买</span>
-						            </div>
-						        </a>
-					        </div>
-					    </li>
-					    <li class="mui-table-view-cell mui-media mui-col-xs-6">
-					        <div class="bgf">
-					        	<a href="#">
-						            <img class="mui-media-object" src="../img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg">
-						            <div class="object-info">陆剑歌如约泛光灯凡是看过咯上分公司里的歌</div>
-						            <div class="buy_count">
-						            	<span class="fl color_red f16"> &yen;466</span>
-						            	<span class="fr color_b">1.9万人购买</span>
-						            </div>
-						        </a>
-					        </div>
-					    </li>
+					    </li>-->
 					</ul>
+					<!--金牌服务列表-->   
+					<script type="text/html" id="jpfwserve">
+					    {{each data as value i}}
+					    {{if value.state==0}}
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 fw_item" data-id="{{value.id}}">
+					        <div class="bgf">
+					        	<a href="javascript:void(0)">
+						            <img class="mui-media-object" src="{{value.imgPath}}">
+						            <div class="object-info">{{value.title}}</div>
+						            <div class="buy_count">
+						            	<span class="fl color_red f16"> &yen;{{value.price}}</span>
+						            	<span class="fr color_b">{{value.buycount}}人购买</span>
+						            </div>
+						        </a>
+					        </div>
+					    </li>
+					    {{/if}}
+						{{/each}}
+					</script>
 				</div>
 				<div id="rmhd" class="mui-control-content">
-					<ul class="mui-table-view mui-grid-view">
-					    <li class="mui-table-view-cell mui-media mui-col-xs-6">
-					        <div class="bgf">
-					        	<a href="#">
-						            <img class="mui-media-object" src="../img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg">
-						            <div class="object-info">陆剑歌如约泛光灯凡是看过咯上分公司里的歌</div>
-						            <div class="buy_count">
-						            	<span class="fl color_red f16"> &yen;466</span>
-						            	<span class="fr color_b">1.9万人购买</span>
-						            </div>
-						        </a>
-					        </div>
-					    </li>
-					    <li class="mui-table-view-cell mui-media mui-col-xs-6">
-					        <div class="bgf">
-					        	<a href="#">
-						            <img class="mui-media-object" src="../img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg">
-						            <div class="object-info">陆剑歌如约泛光灯凡是看过咯上分公司里的歌</div>
-						            <div class="buy_count">
-						            	<span class="fl color_red f16"> &yen;466</span>
-						            	<span class="fr color_b">1.9万人购买</span>
-						            </div>
-						        </a>
-					        </div>
-					    </li>
+					<ul class="mui-table-view mui-grid-view" id="rmhd_list">
+					    
 					</ul>
+					<!--热门活动列表-->
+					<script type="text/html" id="rmhdserve">
+					    {{each data as value i}}
+					    {{if value.state==1}}
+						<li class="mui-table-view-cell mui-media mui-col-xs-6 hd_item" data-id="{{value.id}}">
+					        <div class="bgf">
+					        	<a href="javascript:void(0)">
+						            <img class="mui-media-object" src="{{value.imgPath}}">
+						            <div class="object-info">{{value.title}}</div>
+						            <div class="buy_count">
+						            	<span class="fl color_red f16"> &yen;{{value.price}}</span>
+						            	<span class="fr color_b">{{value.buycount}}人购买</span>
+						            </div>
+						        </a>
+					        </div>
+					    </li>
+					    {{/if}}
+						{{/each}}
+					</script>
 				</div>
 			</div>
 		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/app.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			//		      	数据渲染
+                mui.ajax({
+						url: "serve.json",
+						type: "get",
+						async: false,
+						data:"",
+						dataType: "json",
+						timeout: 1000,
+						success: function(data) {
+							document.getElementById("jpfw_list").innerHTML=template("jpfwserve",data);
+							document.getElementById("rmhd_list").innerHTML=template("rmhdserve",data);
+						}
+				});
 		      mui.init();
 		      mui.plusReady(function(){
 		      	plus.navigator.setStatusBarBackground("#7854F1");
+
 		      	document.getElementById("fuwu").addEventListener('tap',function(){
 		           mui.openWindow({
 		               url:"serve.html",
-		               id:"serve"
+		               id:"serve",
+		               createNew:true
 	       			});
 		        });
 		        document.getElementById("huodong").addEventListener('tap',function(){
 		           mui.openWindow({
 		               url:"activity.html",
-		               id:"activity"
+		               id:"activity",
+		               createNew:true
+	       			});
+		        });
+		        document.getElementById("fjmd").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"nearby-store.html",
+		               id:"nearby-store",
+		               createNew:true
 	       			});
 		        });
 		        document.getElementById("barcode_scan").addEventListener('tap',function(){
@@ -177,6 +181,46 @@
 		               id:"barcode_scan"
 	       			});
 		        });
+		         document.getElementById("search_input").addEventListener('focus',function(){
+		           mui.openWindow({
+		               url:"search.html",
+		               id:"search",
+		               createNew:true
+	       			});
+		        });
+//		        北中快讯
+		        var bzkx_item=document.getElementsByClassName("bzkx_item").length;
+				for(var i=0;i<bzkx_item;i++){
+					document.getElementsByClassName("bzkx_item")[i].addEventListener("tap",function(){
+						 mui.openWindow({
+			               url:"bzkx-info.html",
+			               id:"bzkx-info",
+			               createNew:true
+		       			});
+					})
+				}
+//		     金牌服务		
+				var hd_list=document.getElementsByClassName("fw_item").length;
+				for(var i=0;i<hd_list;i++){
+					document.getElementsByClassName("fw_item")[i].addEventListener("tap",function(){
+						 mui.openWindow({
+			               url:"server-info.html",
+			               id:"server-info",
+			               createNew:true
+		       			});
+					})
+				}
+//		     热门活动		
+				var hd_list=document.getElementsByClassName("hd_item").length;
+				for(var i=0;i<hd_list;i++){
+					document.getElementsByClassName("hd_item")[i].addEventListener("tap",function(){
+						 mui.openWindow({
+			               url:"activity-info.html",
+			               id:"activity-info",
+			               createNew:true
+		       			});
+					})
+				}
 		      })
  		</script>
 	</body>

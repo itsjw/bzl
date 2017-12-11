@@ -1,5 +1,5 @@
 /*点击头像触发*/ 
-        document.getElementById('headImage').addEventListener('tap', function() { 
+        document.getElementById('head').addEventListener('tap', function() { 
             if (mui.os.plus) { 
                 var a = [{ 
                     title: "拍照" 

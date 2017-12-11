@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app.css" rel="stylesheet" />
+	</head>
+
+	<body id="my_evaluate">
+	<header class="mui-bar mui-bar-nav" style="background: #000;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
+			<h1 class="mui-title color_f">
+				订单评价
+			</h1>
+	</header>
+		<div class="mui-content">
+			<div class="evaluate">
+				<div class="evaluate_goods">
+				   <div class="evaluate_goods_img">
+				   	<img src="../img/01home_28.png"/>
+				   </div>
+				   <div class="goods_info">
+				   	    <div class="goods_tit">
+				   	         夏季中老年睡衣 夏纯棉加大码装家必备居服套装
+				   	    </div>
+				   	    <div class="goods_price">
+				   	    	&yen; 666
+				   	    </div>
+				   </div>
+			    </div>
+			    <div class="pj_type">
+			    	<div class="pj_item">
+			    		<span class="hp active"><img src="../img/haoping.png">好评</span>
+			    	</div>
+			    	<div class="pj_item">
+			    		<span class="zp"><img src="../img/zhongping.png">中平</span>
+			    	</div>
+			    	<div class="pj_item">
+			    		<span class="cp"><img src="../img/chaping.png">差评</span>
+			    	</div>
+			    	<textarea class="pjtext f12" rows="2" placeholder="说点什么吧..."></textarea>
+			    </div>
+			</div>
+			<div class="comment">
+				<div class="comment_tit">
+					亲,来点评一下吧...
+				</div>
+				<ul class="comment_list">
+					<li class="comment_item active"></li>
+					<li class="comment_item"></li>
+					<li class="comment_item"></li>
+					<li class="comment_item"></li>
+					<li class="comment_item"></li>
+				</ul>
+			</div>
+			<div class="submit_pj">
+				<button id="submit" class="mui-btn mui-btn-block color_f f16">提交评价</button>
+			</div>
+		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".pj_item").click(function(){
+				$(this).find("span").addClass("active").parent(".pj_item").siblings().find("span").removeClass("active");
+			})
+			$(".comment_item").click(function(){
+				$(this).addClass("active");
+			})
+			 document.getElementById("submit").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"activity.html",
+		               id:"activity",
+		               createNew:false
+	       			});
+		        });
+		</script>
+	</body>
+
+</html>

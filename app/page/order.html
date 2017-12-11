@@ -11,8 +11,8 @@
 	<body id="order">
 	<header class="mui-bar mui-bar-nav" style="background: #000;">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left color_f"></a>
-			<h1 class="mui-title">
-				
+			<h1 class="mui-title color_f">
+				订单
 			</h1>
 			<a class="mui-icon mui-icon-chatbubble mui-pull-right color_f"></a>
 	</header>
@@ -103,8 +103,20 @@
 			    <div id="ycg" class="mui-control-content"></div>
 			</div>
 		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		var len_con=document.getElementsByClassName("item_content").length;
+			for(var i=0;i<len_con;i++){
+				document.getElementsByClassName("item_content")[i].addEventListener("tap",function(){
+					 mui.openWindow({
+		               url:"balance01.html",
+		               id:"balance01"
+	       			});
+				})
+			}
+		</script>
 	</body>
 
 </html>

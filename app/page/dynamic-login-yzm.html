@@ -30,7 +30,16 @@
                  <button id="login" class="mui-btn mui-btn-block mui-btn-zdy">登录</button>
 			</div>
 		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			document.getElementById("login").addEventListener('tap',function(){
+	           mui.openWindow({
+	               url:"login-successful.html",
+	               id:"login-successful"
+       			});
+	        });
+		</script>
 	</body>
 
 </html>

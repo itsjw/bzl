@@ -31,13 +31,24 @@
 		          <div class="travel_agency_name fl"><span><img src="../img/01home_17.png"/></span>中国某某某旅行社</div>
 		          <p class="travel_agency_phone fr" id="tel"><span class="mui-icon mui-icon-phone"></span>电话咨询</p>
 		     </div>
-		     <ul class="tab_list">
+		     <!--<ul class="tab_list">
 		          <li class="menu_item"><a href="javascript:void(0)" class=" active">活动详情</a></li>
 		          <li class="menu_item"><a href="javascript:void(0)">评价</a></li>
 		          <li class="menu_item"><a href="javascript:void(0)">活动须知</a></li>
-		     </ul>
+		     </ul>-->
+		     <div id="segmentedControl" class="mui-segmented-control">
+				<a class="mui-control-item mui-active" href="#hdxq">
+				     活动详情
+				</a>
+				<a class="mui-control-item" href="#pj">
+					评价
+				</a>
+				<a class="mui-control-item" href="#hdxz">
+					活动须知
+				</a>
+			</div>
 			<div class="hot_activity_text">
-			    <div class="hot_activity_panel" id="hdxq">
+			    <div class="mui-control-content mui-active hot_activity_panel" id="hdxq">
 				     <div class="panel_tit"><h4><span></span>活动详情</h4></div>
 				     <div class="panel_text">
 				          <div class="panel_user">
@@ -53,7 +64,7 @@
 						  </div>
 				     </div>
 				</div>
-				<div class="hot_activity_panel" id="pj">
+				<div class="mui-control-content hot_activity_panel" id="pj">
 				     <div class="panel_tit"><h4><span></span>评价</h4></div>
 				     <div class="panel_text">
 				          <div class="panel_user">
@@ -65,36 +76,42 @@
 						  </div>
 						  <p class="panel_time">2017-08-09 08:12</p>
 						  <div class="panel_btn">
-						        <button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">
+						        <button type="button" id="lookWhole" class="mui-btn mui-btn-warning mui-btn-outlined">
 									查看全部评价
 								</button>
 						  </div>
 				     </div>
 				</div>
-				<div class="hot_activity_panel" id="hdxz">
-				     <div class="panel_tit"><h4><span></span>活动须知</h4></div>
-				     <div class="panel_text">
-				          <div class="panel_info">
-				                <p>***卖家的服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
-				                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
-						  </div>
-						   <div class="look_gd">查看更多<span class="mui-icon mui-icon-arrowright"></span></div>
-				     </div>
-				</div>
-				<div class="hot_activity_panel">
-				     <div class="panel_tit"><h4><span></span>退改规则</h4></div>
-				     <div class="panel_text">
-				          <div class="panel_info">
-				                <p>***湖广会馆泛黄发花福冈黄蜂更好发挥过股份回购很反感海关法划分干活干活</p>
-				                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
-						  </div>
-				     </div>
+				<div class="mui-control-content" id="hdxz">
+					<div class="hot_activity_panel">
+					     <div class="panel_tit"><h4><span></span>活动须知</h4></div>
+					     <div class="panel_text">
+					          <div class="panel_info">
+					                <p class="block">***卖家的服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+					                <p class="block">服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+					                <p>***卖家的服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+					                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+					                <p>***卖家的服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+					                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+							  </div>
+							   <div class="look_gd" id="lookGd"><span class="look_gd_text">查看更多</span><span class="mui-icon mui-icon-arrowright"></span></div>
+					     </div>
+					</div>
+					<div class="hot_activity_panel">
+					     <div class="panel_tit"><h4><span></span>退改规则</h4></div>
+					     <div class="panel_text">
+					          <div class="panel_info_txt">
+					                <p>***湖广会馆泛黄发花福冈黄蜂更好发挥过股份回购很反感海关法划分干活干活</p>
+					                <p>服务态度挺好的，我买了之后还提醒我，认真检查下商品。真的不错，下次还在这买。</p>
+							  </div>
+					     </div>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="footer">
 		     <div class="footer_count">2期剩余<span>123</span> 人次</div>
-		     <div class="footer_btn">
+		     <div class="footer_btn" id="enrolls">
 		         <span class="btn_bm">立即报名</span>
 		     </div>
 		</div>
@@ -102,15 +119,46 @@
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-		   $(".menu_item").click(function(){
-		       $(this).find('a').addClass("active").parent().siblings().find("a").removeClass("active");
-		       console.log($(this).index());
-		       var top=$(".hot_activity_panel").eq($(this).index()).offset().top;
-		       document.body.scrollTop = top-50;
-		   })
+//			点击调到指定位置
+//		   $(".menu_item").click(function(){
+//		       $(this).find('a').addClass("active").parent().siblings().find("a").removeClass("active");
+//		       console.log($(this).index());
+//		       var top=$(".hot_activity_panel").eq($(this).index()).offset().top;
+//		       document.body.scrollTop = top-50;
+//		   })
 		   document.getElementById("tel").addEventListener('tap', function() {
 			    plus.device.dial("10086");
 		   });
+		    mui.init();
+		    mui.plusReady(function(){
+		        document.getElementById("lookWhole").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"evaluate.html",
+		               id:"evaluate"
+	       			});
+		        });
+		        document.getElementById("enrolls").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"enroll.html",
+		               id:"enroll"
+	       			});
+		        });
+		    })
+		   //活动通知点击状态
+		   var open=true;
+		   $("#lookGd").click(function(){
+		   	   if(open==true){
+			   	   	$(".panel_info p").addClass("block");
+			   	    $(".look_gd_text").html("点击收起");
+			   	    open=false;
+		   	   }else{
+		   	   	    $(".panel_info p").removeClass("block");
+		   	   	    $(".panel_info p").eq(0).addClass("block");
+		   	   	    $(".panel_info p").eq(1).addClass("block");
+			   	    $(".look_gd_text").html("查看更多");
+			   	    open=true;
+		   	   }
+		   })
 	   </script>
 	</body>
 

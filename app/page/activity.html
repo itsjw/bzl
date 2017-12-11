@@ -39,8 +39,8 @@
 				          </div>
 				     </div>
 				     <div class="tw_list">
-				     	<ul class="mui-table-view">
-							<li class="mui-table-view-cell mui-media">
+				     	<ul class="mui-table-view" id="wholelist">
+							<!--<li class="mui-table-view-cell mui-media hd_list">
 								<a href="javascript:;">
 									<img class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
 									<div class="mui-media-body">
@@ -49,28 +49,29 @@
 									</div>
 									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
 								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a href="javascript:;">
-									<img class="mui-media-object mui-pull-left" src="../img/muwu.jpg">
-									<div class="mui-media-body">
-										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
-										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
-									</div>
-									<span class="mui-icon-extra mui-icon-extra-heart-filled xh"></span>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a href="javascript:;">
-									<img class="mui-media-object mui-pull-left" src="../img/shuijiao.jpg">
-									<div class="mui-media-body">
-										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
-										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
-									</div>
-									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
-								</a>
-							</li>
+							</li>-->
 						</ul>
+						
+						<!--全部活动列表渲染-->		
+						<script type="text/html" id="wholeactivity">
+						    {{each data as value i}}
+							<li class="mui-table-view-cell mui-media hd_item" data-id="{{value.id}}">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="{{value.imgPath}}">
+									<div class="mui-media-body">
+										<span class="list_tit">{{value.title}}</span>
+										<p class="mui-ellipsis">{{value.liketime}}</p>
+									</div>
+									{{if value.state==0}}
+									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
+									{{else if value.state==1}}
+									<span class="mui-icon-extra mui-icon-extra-heart-filled xh"></span>
+									{{/if}}
+								</a>
+							</li>
+							{{/each}}
+						</script>
+						
 				     </div>
 				</div>
 				<div id="remen" class="mui-control-content">
@@ -85,43 +86,77 @@
 				          </div>
 				     </div>
 				     <div class="tw_list">
-				     	<ul class="mui-table-view">
-							<li class="mui-table-view-cell mui-media">
-								<a href="javascript:;">
-									<img class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
-									<div class="mui-media-body">
-										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
-										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
-									</div>
-									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
-								</a>
-							</li>
-							<li class="mui-table-view-cell mui-media">
-								<a href="javascript:;">
-									<img class="mui-media-object mui-pull-left" src="../img/muwu.jpg">
-									<div class="mui-media-body">
-										<span class="list_tit">能和心爱的人一起睡觉，是件幸福的事情</span>
-										<p class="mui-ellipsis">20mins ago&nbsp;|&nbsp;I like</p>
-									</div>
-									<span class="mui-icon-extra mui-icon-extra-heart-filled xh"></span>
-								</a>
-							</li>
+				     	<ul class="mui-table-view" id="hotlist">
+							
 						</ul>
+						
+						<!--热门活动列表渲染-->		
+						<script type="text/html" id="hotactivity">
+						
+						    {{each data as value i}}
+						    {{if value.hot}}
+							<li class="mui-table-view-cell mui-media hd_item" data-id="{{value.id}}">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="{{value.imgPath}}">
+									<div class="mui-media-body">
+										<span class="list_tit">{{value.title}}</span>
+										<p class="mui-ellipsis">{{value.liketime}}</p>
+									</div>
+									{{if value.state==0}}
+									<span class="mui-icon-extra mui-icon-extra-heart-filled"></span>
+									{{else if value.state==1}}
+									<span class="mui-icon-extra mui-icon-extra-heart-filled xh"></span>
+									{{/if}}
+								</a>
+							</li>
+							{{/if}}
+							{{/each}}
+						</script>
+						
 				     </div>
 				</div>
 			</div>
 		</div>
+		
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+				//			列表渲染js
+                mui.ajax({
+						url: "api/activity.json",
+						type: "get",
+						async: false,
+						data:"",
+						dataType: "json",
+						timeout: 1000,
+						success: function(data) {
+							document.getElementById("wholelist").innerHTML=template("wholeactivity",data);
+							document.getElementById("hotlist").innerHTML=template("hotactivity",data);
+						}
+				});
 		      mui.init();
 		      mui.plusReady(function(){
+		      
+		      	
 		        document.getElementById("hot").addEventListener('tap',function(){
 		           mui.openWindow({
 		               url:"activity-info.html",
 		               id:"activity-info"
 	       			});
 		        });
+		        //		     热门活动		
+				var hd_list=document.getElementsByClassName("hd_item").length;
+				for(var i=0;i<hd_list;i++){
+					document.getElementsByClassName("hd_item")[i].addEventListener("tap",function(){
+						 mui.openWindow({
+			               url:"activity-info.html",
+			               id:"activity-info",
+			               createNew:true
+		       			});
+					})
+				}
 		      })
  		</script>
 	</body>

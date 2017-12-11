@@ -14,8 +14,8 @@
 			<h1 class="mui-title color_f">购物车</h1>
 	</header>
 	<div class="mui-content" style="padding-bottom: 50px;">
-		<ul class="buyCar_list">
-			<li class="byu_item">
+		<ul class="buyCar_list" id="buyCar_list">
+			<!--<li class="buy_item">
 				<div class="goods">
 					<div class="mui-input-row mui-checkbox mui-left fl">
 		                <input name="checkbox" class="listCheckBox listCheck1" data-num="1" value="Item 1" type="checkbox">
@@ -54,143 +54,182 @@
 						</div>
 					</div>
 				</div>
-			</li>
-			<li class="byu_item">
-				<div class="goods">
-					<div class="mui-input-row mui-checkbox mui-left fl">
-		                <input name="checkbox" class="listCheckBox listCheck2" data-num="2" value="Item 1" type="checkbox">
-		            </div>
-					<div class="goods_name fl">
-						<h4>茶艺居</h4>
-						<p>商品优惠：<span>满30减5元</span></p>
-					</div>
-					<div class="del fr">
-						<span class="mui-icon mui-icon-trash"></span>
-					</div>
-				</div>
-				<div class="goods_info">
-					<div class="mui-input-row mui-checkbox mui-left fl">
-		                <input name="checkbox" class="listCheckBox listCheck2" data-num="2" value="Item 2" type="checkbox">
-		            </div>
-					<div class="goods_img fl">
-						<img src="../img/foot.jpg" />
-					</div>
-					<div class="goos_name_count fl">
-						<div class="name_price">
-							<div class="g_name fl">
-								佳佳都可大卡司运动鞋
-							</div>
-							<div class="g_price fr">
-								<p style="text-decoration: line-through;">&yen;199</p>
-								<p>&yen;99</p>
-							</div>
-						</div>
-						<p>颜色：<span>斑马条黑纹</span></p>
-						<p>尺码：<span>38尺码</span></p>
-						<div class="mui-numbox" data-numbox-min="0">
-							<button class="mui-btn mui-btn-numbox-minus" type="button" disabled="">-</button>
-							<input id="test" class="mui-input-numbox" type="number" value="1">
-							<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="byu_item">
-				<div class="goods">
-					<div class="mui-input-row mui-checkbox mui-left fl">
-		                <input name="checkbox" class="listCheckBox listCheck3" data-num="3" value="Item 1" type="checkbox">
-		            </div>
-					<div class="goods_name fl">
-						<h4>茶艺居</h4>
-						<p>商品优惠：<span>满30减5元</span></p>
-					</div>
-					<div class="del fr">
-						<span class="mui-icon mui-icon-trash"></span>
-					</div>
-				</div>
-				<div class="goods_info">
-					<div class="mui-input-row mui-checkbox mui-left fl">
-		                <input name="checkbox" class="listCheckBox listCheck3" data-num="3" value="Item 2" type="checkbox">
-		            </div>
-					<div class="goods_img fl">
-						<img src="../img/foot.jpg" />
-					</div>
-					<div class="goos_name_count fl">
-						<div class="name_price">
-							<div class="g_name fl">
-								佳佳都可大卡司运动鞋
-							</div>
-							<div class="g_price fr">
-								<p style="text-decoration: line-through;">&yen;199</p>
-								<p>&yen;99</p>
-							</div>
-						</div>
-						<p>颜色：<span>斑马条黑纹</span></p>
-						<p>尺码：<span>38尺码</span></p>
-						<div class="mui-numbox" data-numbox-min="0">
-							<button class="mui-btn mui-btn-numbox-minus" type="button" disabled="">-</button>
-							<input id="test" class="mui-input-numbox" type="number" value="1">
-							<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
-						</div>
-					</div>
-				</div>
-			</li>
+			</li>-->
 		</ul>
+		<script type="text/html" id="buyCartemp">
+			{{each data as value i}}
+			<li class="buy_item" data-id="{{value.id}}">
+				<div class="goods">
+					<div class="mui-input-row mui-checkbox mui-left fl">
+		                <input name="checkbox" class="listCheckBox listCheck{{value.id}}" data-num="{{value.id}}" value="Item{{value.id}}" type="checkbox">
+		            </div>
+					<div class="goods_name fl">
+						<h4>{{value.title}}</h4>
+						<p>商品优惠：<span>{{value.yh}}</span></p>
+					</div>
+					<div class="del fr">
+						<span class="mui-icon mui-icon-trash"></span>
+					</div>
+				</div>
+				<div class="goods_info">
+					<div class="mui-input-row mui-checkbox mui-left fl">
+		                <input name="checkbox" class="listCheckBox listCheck{{value.id}}" data-num="{{value.id}}" value="Item{{value.id}}" type="checkbox">
+		            </div>
+					<div class="goods_img fl">
+						<img src="{{value.imgPath}}" />
+					</div>
+					<div class="goos_name_count fl">
+						<div class="name_price">
+							<div class="g_name fl">
+								{{value.goodsname}}
+							</div>
+							<div class="g_price fr">
+								<p class="oldprices" style="text-decoration: line-through;">&yen;{{value.oldprice}}</p>
+								<p class="newprices">&yen;{{value.newprice}}</p>
+								<!--新的价格-->
+								<input type="hidden" name="newprice" id="newprice{{value.id}}" value="{{value.newprice}}" />
+							</div>
+						</div>
+						<p>颜色：<span>{{value.color}}</span></p>
+						<p>尺码：<span>{{value.chima}}</span></p>
+						<div class="mui-numbox" data-numbox-min="0">
+							<button class="mui-btn mui-btn-numbox-minus" type="button" disabled="">-</button>
+							<input id="count{{value.id}}" class="mui-input-numbox" data-id="{{value.id}}" type="number" value="1">
+							<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+						</div>
+					</div>
+				</div>
+				<!--单个商品的总价格-->
+				<input type="hidden" name="sumprice" id="sumprice{{value.id}}" value="{{value.newprice}}" />
+			</li>
+			{{/each}}
+		</script>
 	</div>
+	<!--全选代码-->
 	<div class="foot_js">
-		<div class="mui-input-row mui-checkbox mui-left fl">
-			  <lable for="checkAll">全选</lable>
-		      <input name="checkbox" id="checkAll" type="checkbox">
-	    </div>
-        <div class="foot_jsbtn fr">结算</div>
-        <div class="foot_hj fr">合计：<span>&yen;100</span></div>
+	    <div class="mui-input-row mui-checkbox mui-left fl">
+             <input id="checkAll" type="checkbox">
+             <label id="label" for="checkAll">全选</label>
+        </div>
+        <div class="foot_jsbtn fr" id="jiesuan">结算</div>
+        <div class="foot_hj fr">合计：<span>&yen;<span id="total">0</span></span></div>
 
 	</div>
+	
+	<!--<div class="balance01_foot">
+		<button id="login" class="mui-btn mui-btn-block color_f f16">结算</button>
+	</div>-->
 	<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/template.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		//       实现全选功能
+//			购物车列表渲染js
+        mui.ajax({
+				url: "buycar.json",
+				type: "get",
+				async: false,
+				data:"",
+				dataType: "json",
+				timeout: 1000,
+				success: function(data) {
+					document.getElementById("buyCar_list").innerHTML=template("buyCartemp",data);
+				}
+		});
         mui.init();
+         document.getElementById("jiesuan").addEventListener('tap',function(){
+	           mui.openWindow({
+	               url:"balance.html",
+	               id:"balance"
+	   			});
+	      });
         (function (m) {
+        	//	          将对应id存入数组就可以根据id计算价格总和
+	        	var arrprice=new Array();
+	        	var arr=new Array();
+	        //数组去重复的方法，因为全选每次会存入两个一样的数组，所以需要去重
+        	function toRepeat(args){
+		        for(i=0;i<args.length;i++){
+		            if(arrprice.indexOf(args[i])<0){
+		                arrprice.push(args[i])
+		            }
+		        }
+		        return arrprice;
+		    }
+        	//       实现全选功能
             document.getElementById('checkAll').addEventListener('change',function(e) {
 	            var listBox = m('.listCheckBox');
 	            if (e.target.checked) {
 	                listBox.each(function() {
 	                    var ele = this;
-	                    ele.checked=true
+	                    ele.checked=true;
+	                    var num=$(this).data("num");
+	                    arr.push(num);
+	                    toRepeat(arr);
 	                })
 	            } else {
 	                listBox.each(function() {
 	                    var ele = this;
 	                    ele.checked=false
+	                    var num=$(this).data("num");
+	                    arr.pop(num);
+	                    toRepeat(arr);
 	                })
 	            }
+	            console.log(arrprice);
 	        });
+	        //实现对应双选
 	        var checklen=document.getElementsByClassName('listCheckBox').length;
 	        for(var i=0;i<checklen;i++){
 	        	document.getElementsByClassName('listCheckBox')[i].addEventListener('change',function(e) {
+	        		//实现对应双选
 	        		var num=$(this).data("num");
-	        		console.log(num);
 		            var listBox = m('.listCheck'+num);
 		            if (e.target.checked) {
 		                listBox.each(function() {
 		                    var ele = this;
-		                    ele.checked=true
+		                    ele.checked=true;
 		                })
+		                arrprice.push($(this).data("num"));
 		            } else {
 		                listBox.each(function() {
 		                    var ele = this;
-		                    ele.checked=false
+		                    ele.checked=false;
 		                })
+		                arrprice.pop($(this).data("num"));
 		            }
 		        });
 	        }
-//	        $(".listCheckBox").change(function(e){
-//              var flg=e.target.checked;
-//              $(this).parent().parent().siblings().find(".listCheckBox").attr("checked",flg);
-////              console.log($(this).parent().parent().siblings().find(".listCheckBox").attr("checked",false));
-//	        })
+	        //实现单个价格总和
+	        var inputnumbox=document.getElementsByClassName("mui-input-numbox").length;
+	        var num=0,count=0,price=0,sum=0;
+	        for(var i=0;i<inputnumbox;i++){
+	        	document.getElementsByClassName('mui-input-numbox')[i].addEventListener('change',function() {
+	        		num=$(this).data("id");
+	        		count=$("#count"+num).val();
+	        		price=$("#newprice"+num).val();
+	        		sum=count*price;
+	        		$("#sumprice"+num).val(sum);
+	        	})
+	        }
+	        //选中多个商品的总价
+	        var total=0; 
+	        var idnum=0,idprice=0;
+	        $(".listCheckBox").change(function(){
+		        for(var i=0;i<arrprice.length;i++){
+	        		idnum=arrprice[i];
+//		        	   根据id获取相应的价格
+	        	    idprice=$("#sumprice"+idnum).val();
+//	        	    console.log("根据id获取的相应价格"+idprice)
+	        	    total+=parseInt(idprice);
+//	        	    console.log("总价"+total);
+	            }
+		         document.getElementById("total").innerHTML=total;
+		         total=0;
+	        })
+	        //全选后的价格
+//	        $("#checkAll").change(function)
+	        
       })(mui)
 	</script>
 	</body>

@@ -1,7 +1,7 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
 	"id": "H57765D13",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "webviewSwipe",/*应用名称，程序桌面图标名称*/
+	"name": "bzkx",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -219,7 +219,16 @@
 					"js/jquery-1.11.3.js",
 					"css/mui.min.css",
 					"page/home.html",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"css/app.css",
+					"img/icon02@3X.png",
+					"img/icon012@3X.png",
+					"img/icon04@3X.png",
+					"img/icon03@3X.png",
+					"img/icon042@3X.png",
+					"img/icon01@3X.png",
+					"img/icon032@3X.png",
+					"img/icon022@3X.png"
 				],
 				"refer": [
 					"page/gear.html",
@@ -265,12 +274,24 @@
 					"img/01home_07.png",
 					"js/mui.min.js",
 					"img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg",
-					"js/app.js"
+					"js/app.js",
+					"img/hearbg@3X.png",
+					"js/jquery-1.11.3.js",
+					"fonts/mui.ttf",
+					"img/shuijiao.jpg",
+					"page/serve.json",
+					"img/yuantiao.jpg",
+					"js/template.js"
 				],
 				"refer": [
 					"page/activity.html",
 					"page/serve.html",
-					"page/barcode_scan.html"
+					"page/barcode_scan.html",
+					"page/search.html",
+					"page/nearby-store.html",
+					"page/bzkx-info.html",
+					"page/activity-info.html",
+					"page/server-info.html"
 				],
 				"priority": 0
 			},
@@ -309,7 +330,9 @@
 					"js/layui.js",
 					"js/mui.js",
 					"css/layui.css",
-					"page/new.html"
+					"page/new.html",
+					"img/00-03-02_03.png",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -335,10 +358,16 @@
 					"css/mui.min.css",
 					"js/sub.js",
 					"js/mui.min.js",
-					"img/headbg.png"
+					"img/headbg.png",
+					"img/userbanner@3X.png",
+					"img/scbg@3X.png",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [
-					"page/order.html"
+					"page/order.html",
+					"page/my-profile.html",
+					"page/current-service.html",
+					"page/registration-activities.html"
 				],
 				"priority": 0
 			},
@@ -351,7 +380,9 @@
 					"css/mui.min.css",
 					"js/mui.min.js",
 					"img/04mdcz_02.png",
-					"img/headbg.png"
+					"img/headbg.png",
+					"img/hearbg@3X.png",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -366,7 +397,17 @@
 					"img/headbg.png",
 					"fonts/mui-icons-extra.ttf",
 					"img/cbd.jpg",
-					"css/icons-extra.css"
+					"css/icons-extra.css",
+					"js/jquery-1.11.3.js",
+					"img/01_02.png",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"img/01home_28.png",
+					"js/template.js",
+					"page/activity.json",
+					"img/01home_29.png",
+					"img/yuantiao.jpg"
 				],
 				"refer": [
 					"page/activity-info.html"
@@ -379,7 +420,10 @@
 					"css/global.css",
 					"fonts/mui.ttf",
 					"img/00dl_03.png",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"img/btn01@3X.png",
+					"img/btn02@3X.png",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [
 					"page/login.html",
@@ -395,11 +439,13 @@
 					"css/global.css",
 					"css/mui.min.css",
 					"js/mui.min.js",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [
 					"page/login-successful.html",
-					"page/apply-vip.html"
+					"page/apply-vip.html",
+					"page/dynamic-login.html"
 				],
 				"priority": 0
 			},
@@ -427,7 +473,8 @@
 				],
 				"refer": [
 					"page/apply-vip.html",
-					"page/login.html"
+					"page/login.html",
+					"page/login-successful.html"
 				],
 				"priority": 0
 			},
@@ -436,7 +483,9 @@
 					"img/00-04tz_03.png",
 					"css/login.css",
 					"css/mui.min.css",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"img/loding.gif",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [
 					"page/main.html"
@@ -445,7 +494,10 @@
 			},
 			"page/dynamic-login-yzm.html": {
 				"resources": [
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/login.css",
+					"css/app.css",
+					"css/global.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -457,9 +509,18 @@
 					"js/jquery-1.11.3.js",
 					"img/01home_28.png",
 					"css/mui.min.css",
-					"css/icons-extra.css"
+					"css/icons-extra.css",
+					"img/01home_17.png",
+					"img/01_02.png",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"img/cbd.jpg"
 				],
-				"refer": [],
+				"refer": [
+					"page/evaluate.html",
+					"page/enroll.html"
+				],
 				"priority": 0
 			},
 			"page/serve.html": {
@@ -467,9 +528,25 @@
 					"js/sub.js",
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/icons-extra.css"
+					"css/icons-extra.css",
+					"js/jquery-1.11.3.js",
+					"img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"page/serve.json",
+					"js/template.js",
+					"img/01home_29.png",
+					"img/shuijiao.jpg",
+					"img/muwu.jpg",
+					"img/01home_28.png",
+					"img/yuantiao.jpg",
+					"img/cbd.jpg"
 				],
-				"refer": [],
+				"refer": [
+					"page/activity-info.html",
+					"page/server-info.html"
+				],
 				"priority": 0
 			},
 			"page/buy-car.html": {
@@ -479,9 +556,20 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"img/headbg.png",
-					"js/jquery-1.11.3.js"
+					"js/jquery-1.11.3.js",
+					"img/btn03@3X.png",
+					"img/hearbg@3X.png",
+					"img/01home_29.png",
+					"img/shuijiao.jpg",
+					"img/muwu.jpg",
+					"img/01home_28.png",
+					"img/yuantiao.jpg",
+					"page/buycar.json",
+					"js/template.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/balance.html"
+				],
 				"priority": 0
 			},
 			"page/order.html": {
@@ -492,9 +580,14 @@
 					"img/mydd.png",
 					"css/mui.min.css",
 					"img/plan2.png",
-					"img/plan1.png"
+					"img/plan1.png",
+					"js/jquery-1.11.3.js",
+					"css/app.css",
+					"fonts/mui.ttf"
 				],
-				"refer": [],
+				"refer": [
+					"page/balance01.html"
+				],
 				"priority": 0
 			},
 			"page/code.html": {
@@ -510,9 +603,295 @@
 				"resources": [
 					"js/app.js",
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/jquery-1.11.3.js"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"page/balance01.html": {
+				"resources": [
+					"img/wx.png",
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/global.css",
+					"img/zfb.png",
+					"css/mui.min.css",
+					"img/yl.png",
+					"js/mui.picker.js",
+					"css/mui.picker.css",
+					"js/city.data-3.js",
+					"js/mui.poppicker.js",
+					"img/btn03@3X.png",
+					"css/mui.poppicker.css",
+					"js/city.data.js"
+				],
+				"refer": [
+					"page/payment-completion.html"
+				],
+				"priority": 0
+			},
+			"page/search.html": {
+				"resources": [
+					"js/app.js",
+					"img/01home_29.png",
+					"js/sub.js",
+					"js/mui.min.js",
+					"img/xiala.png",
+					"css/mui.min.css",
+					"img/shaixuan.png",
+					"css/icons-extra.css",
+					"js/mui.picker.js",
+					"js/jquery-1.11.3.js",
+					"css/mui.picker.css",
+					"js/city.data-3.js",
+					"js/mui.poppicker.js",
+					"js/city.data.js",
+					"css/mui.poppicker.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"fonts/mui-icons-extra.ttf",
+					"css/app.css",
+					"img/btn03@3X.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/balance.html": {
+				"resources": [
+					"img/wx.png",
+					"js/mui.picker.js",
+					"js/jquery-1.11.3.js",
+					"img/zfb.png",
+					"css/mui.picker.css",
+					"js/city.data-3.js",
+					"js/sub.js",
+					"js/mui.min.js",
+					"css/global.css",
+					"js/mui.poppicker.js",
+					"img/btn03@3X.png",
+					"css/mui.min.css",
+					"css/mui.poppicker.css",
+					"img/yl.png",
+					"js/city.data.js",
+					"fonts/mui.ttf",
+					"css/app.css"
+				],
+				"refer": [
+					"page/payment-completion.html"
+				],
+				"priority": 0
+			},
+			"page/payment-completion.html": {
+				"resources": [
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/global.css",
+					"css/mui.min.css",
+					"img/jsbj.png",
+					"img/js03_03.png",
+					"img/btn01@3X.png"
+				],
+				"refer": [
+					"page/activity.html"
+				],
+				"priority": 0
+			},
+			"page/my-profile.html": {
+				"resources": [
+					"img/01home_29.png",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/global.css",
+					"css/mui.min.css",
+					"js/uploadImg.js",
+					"img/btn01@3X.png",
+					"css/app.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/nearby-store.html": {
+				"resources": [
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/global.css",
+					"css/mui.min.css",
+					"css/app.css",
+					"img/04mdcz_02.png",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/bzkx-info.html": {
+				"resources": [
+					"img/01home_29.png",
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"img/01home_28.png",
+					"css/mui.min.css",
+					"img/eye.png",
+					"css/icons-extra.css",
+					"img/fab.png",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"page/bzkx.json",
+					"js/template.js",
+					"img/shuijiao.jpg",
+					"img/muwu.jpg",
+					"img/yuantiao.jpg",
+					"img/cbd.jpg"
+				],
+				"refer": [
+					"page/kx-info.html"
+				],
+				"priority": 0
+			},
+			"page/kx-info.html": {
+				"resources": [
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/mui.min.css",
+					"css/icons-extra.css",
+					"css/app.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/evaluate.html": {
+				"resources": [
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"img/btn03@3X.png",
+					"css/mui.min.css",
+					"css/icons-extra.css",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"img/cbd.jpg"
+				],
+				"refer": [
+					"page/my-evaluate.html"
+				],
+				"priority": 0
+			},
+			"page/current-service.html": {
+				"resources": [
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/mui.min.css",
+					"css/icons-extra.css",
+					"img/3ac79f3df8dcd100cab1840b788b4710b9122fee.jpg",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"img/shuijiao.jpg",
+					"img/01home_28.png",
+					"page/serve.json",
+					"js/template.js"
+				],
+				"refer": [
+					"page/server-info.html"
+				],
+				"priority": 0
+			},
+			"page/registration-activities.html": {
+				"resources": [
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"img/muwu.jpg",
+					"css/mui.min.css",
+					"css/icons-extra.css",
+					"fonts/mui-icons-extra.ttf",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png",
+					"img/cbd.jpg",
+					"js/template.js",
+					"page/activity.json",
+					"img/01home_29.png",
+					"img/shuijiao.jpg",
+					"img/01home_28.png",
+					"img/yuantiao.jpg"
+				],
+				"refer": [
+					"page/activity-info.html"
+				],
+				"priority": 0
+			},
+			"page/enroll.html": {
+				"resources": [
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/global.css",
+					"img/btn03@3X.png",
+					"css/mui.min.css",
+					"img/xiala2.png",
+					"img/dingwei.png",
+					"img/00jian_04_11.png",
+					"css/app.css",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"page/my-evaluate.html"
+				],
+				"priority": 0
+			},
+			"page/my-evaluate.html": {
+				"resources": [
+					"img/mx.png",
+					"img/cx.png",
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"css/mui.min.css",
+					"img/zhongping.png",
+					"img/chaping.png",
+					"img/haoping.png",
+					"img/01home_28.png",
+					"css/app.css",
+					"img/btn03@3X.png",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"page/main.html",
+					"page/home.html",
+					"page/activity-info.html",
+					"page/activity.html"
+				],
+				"priority": 0
+			},
+			"page/server-info.html": {
+				"resources": [
+					"img/01home_17.png",
+					"img/01_02.png",
+					"css/app.css",
+					"css/mui.min.css",
+					"css/icons-extra.css",
+					"js/sub.js",
+					"js/mui.min.js",
+					"js/jquery-1.11.3.js",
+					"img/01home_29.png",
+					"img/cbd.jpg",
+					"fonts/mui.ttf",
+					"img/hearbg@3X.png"
+				],
+				"refer": [
+					"page/evaluate.html",
+					"page/enroll.html"
+				],
 				"priority": 0
 			}
 		},

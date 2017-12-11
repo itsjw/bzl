@@ -20,7 +20,7 @@
 			<ul class="mui-table-view" >
 				<li class="mui-table-view-cell mui-media head_bg">
 					<a class="" href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
+						<img id="profile" class="mui-media-object mui-pull-left" src="../img/cbd.jpg">
 						<div class="mui-media-body" style="overflow: hidden;">
 							<div class="user_names">
 								<span>愤怒的小鸟</span>
@@ -42,19 +42,19 @@
 			</ul>
 			<ul class="mui-table-view mui-grid-view mui-grid-9">
 				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="order_goods">
-				    <a href="#">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon">0</span>
 				        <div class="mui-media-body">订单</div>
 				    </a>
 				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-				    <a href="#">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="bmhd">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon">0</span>
 				        <div class="mui-media-body">报名活动</div>
 				    </a>
 				</li>
-				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-				    <a href="#">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="dqfu">
+				    <a href="javascript:void(0)">
 				        <span class="mui-icon">0</span>
 				        <div class="mui-media-body">当前服务</div>
 				    </a>
@@ -76,15 +76,37 @@
 				<li class="mui-table-view-cell f14" style="text-align: center;">退出登录</li>
 			</ul>
 		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/sub.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 		      mui.init();
 		      mui.plusReady(function(){
-		      	document.getElementById("order_goods").addEventListener('tap',function(){
+		        document.getElementById("profile").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"my-profile.html",
+		               id:"my-profile"
+	       			});
+		        });
+		        //订单
+		        document.getElementById("order_goods").addEventListener('tap',function(){
 		           mui.openWindow({
 		               url:"order.html",
 		               id:"order"
+	       			});
+		        });
+//		        报名活动
+		        document.getElementById("bmhd").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"registration-activities.html",
+		               id:"registration-activities"
+	       			});
+		        });
+//		        当前服务
+		        document.getElementById("dqfu").addEventListener('tap',function(){
+		           mui.openWindow({
+		               url:"current-service.html",
+		               id:"current-service"
 	       			});
 		        });
 		      })
