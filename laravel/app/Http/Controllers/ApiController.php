@@ -160,7 +160,7 @@ class ApiController extends Controller
     public function getIndexNews(Request $request)
     {
         $input = $request->input();
-        if(!isset('token')){
+        if(!isset($input['token'])){
             return [
                 'status'=>1,
                 'message'=>'token不能为空!',
