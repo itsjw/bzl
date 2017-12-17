@@ -196,36 +196,36 @@ class ApiController extends Controller
                 'message'=>'请求成功!',
                 'data'=>[
                     [
-                        'image'=>$this->image(),
-                        'title'=>$this->lorem(5,15),
+                        'image'=>$this->getImage(),
+                        'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
                         'id'=>mt_rand(1,10)
                     ],
                     [
-                        'image'=>$this->image(),
-                        'title'=>$this->lorem(5,15),
+                        'image'=>$this->getImage(),
+                        'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
                         'id'=>mt_rand(1,10)
                     ],
                     [
-                        'image'=>$this->image(),
-                        'title'=>$this->lorem(5,15),
+                        'image'=>$this->getImage(),
+                        'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
                         'id'=>mt_rand(1,10)
                     ],
                     [
-                        'image'=>$this->image(),
-                        'title'=>$this->lorem(5,15),
+                        'image'=>$this->getImage(),
+                        'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
                         'id'=>mt_rand(1,10)
                     ],
                     [
-                        'image'=>$this->image(),
-                        'title'=>$this->lorem(5,15),
+                        'image'=>$this->getImage(),
+                        'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
                         'id'=>mt_rand(1,10)
@@ -235,7 +235,7 @@ class ApiController extends Controller
         }
     }
 
-    private function lorem(x,y)
+    private function getLorem(x,y)
     {
         $string = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -253,7 +253,7 @@ class ApiController extends Controller
         return $section;
     }
 
-    private function image()
+    private function getImage()
     {
         $images = [
             'https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=c4d77472f21986185e47e9847aec2e69/7acb0a46f21fbe091caf320761600c338744ad34.jpg',
@@ -292,73 +292,73 @@ class ApiController extends Controller
                 'data'=>[
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
                     [
                         'id'=>mt_rand(1,10),
-                        'title'=>$this->lorem(5,15),
+                        'title'=>$this->getLorem(5,15),
                         'logo'=>$this->avatar(),
-                        'nickname'=>$this->lorem(1,1),
-                        'image'=>$this->image(),
+                        'nickname'=>$this->getLorem(1,1),
+                        'image'=>$this->getImage(),
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
