@@ -32,7 +32,7 @@ Route::post('/auth/register','ApiController@register');
 Route::get('/index/news','ApiController@getIndexNews');
 
 // 热门活动
-Route::get('/index/rmhdlist','ApiController@getIndexRmhdlist');
+Route::get('/rmhdlist','ApiController@getIndexRmhdlist');
 
 // 背中快讯详情页
 Route::get('/news/{id}','ApiController@getOneNews');
@@ -43,3 +43,6 @@ Route::get('/index/service','ApiController@getIndexRmhdlist');
 
 // 北中快讯列表也
 Route::get('/news','ApiController@getNews');
+
+// 活动列表页 全部
+Route::get('/qbhdlist','ApiController@getQbhdlist');

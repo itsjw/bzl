@@ -423,4 +423,88 @@ class ApiController extends Controller
             ];
         }
     }
+
+    /**
+     * 全部活动
+     */
+    public function getQbhdlist(Request $request)
+    {
+        $input = $request->input();
+
+        if(!isset($input['token'])){
+            return [
+                'status'=>1,
+                'message'=>'token不能为空!',
+                'data'=>[]
+            ];
+        }else{
+            return [
+                'status'=>0,
+                'message'=>'请求成功!',
+                'data'=>[
+                    'recommend'=>[
+                        [
+                            'id'=>mt_rand(1,10),
+                            'image'=>$this->getImage(),
+                            'title'=>$this->getLorem(5,10),
+                            'subtitle'=>$this->getLorem(8,12),
+                            'tags'=>[$this->getWord(8),$this->getWord(5)],
+                            'people'=>mt_rand(0,500),
+                            'price'=>mt_rand(100,20000)
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'image'=>$this->getImage(),
+                            'title'=>$this->getLorem(5,10),
+                            'subtitle'=>$this->getLorem(8,12),
+                            'tags'=>[$this->getWord(8),$this->getWord(5)],
+                            'people'=>mt_rand(0,500),
+                            'price'=>mt_rand(100,20000)
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'image'=>$this->getImage(),
+                            'title'=>$this->getLorem(5,10),
+                            'subtitle'=>$this->getLorem(8,12),
+                            'tags'=>[$this->getWord(8),$this->getWord(5)],
+                            'people'=>mt_rand(0,500),
+                            'price'=>mt_rand(100,20000)
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'image'=>$this->getImage(),
+                            'title'=>$this->getLorem(5,10),
+                            'subtitle'=>$this->getLorem(8,12),
+                            'tags'=>[$this->getWord(8),$this->getWord(5)],
+                            'people'=>mt_rand(0,500),
+                            'price'=>mt_rand(100,20000)
+                        ],
+                    ],
+                    'list'=>[
+                        [
+                            'id'=>mt_rand(1,10),
+                            'title'=>$this->getLorem(5,10),
+                            'image'=>$this->getImage(),
+                            'star'=>mt_rand(0,1),
+                            'published_at'=>date('Y-m-d H:i:s',time())
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'title'=>$this->getLorem(5,10),
+                            'image'=>$this->getImage(),
+                            'star'=>mt_rand(0,1),
+                            'published_at'=>date('Y-m-d H:i:s',time())
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'title'=>$this->getLorem(5,10),
+                            'image'=>$this->getImage(),
+                            'star'=>mt_rand(0,1),
+                            'published_at'=>date('Y-m-d H:i:s',time())
+                        ],
+                    ]
+                ]
+            ];
+        }
+    }
 }
