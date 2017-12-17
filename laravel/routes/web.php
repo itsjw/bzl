@@ -34,6 +34,9 @@ Route::get('/index/news','ApiController@getIndexNews');
 // 热门活动
 Route::get('/index/rmhdlist','ApiController@getIndexRmhdlist');
 
+// 背中快讯详情页
+Route::get('/news/{id}','ApiController@getOneNews');
+
 
 // 热门活动
 Route::get('/index/service','ApiController@getIndexRmhdlist');

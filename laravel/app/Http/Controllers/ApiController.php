@@ -243,16 +243,38 @@ class ApiController extends Controller
 
     private function getLorem($x,$y)
     {
-	$section = '';
-	
-	$section_length = mt_rand($x,$y);
-	for($i=0; $i<$section_length; $i++){
-		$word_length = mt_rand(3,10);
-		$section .= $this->getWord($word_length) . ' ';	
-	}	
+        $section = '';
 
-	$section = substr($section,0,-1);
-	return $section .= '.';
+        $section_length = mt_rand($x,$y);
+        for($i=0; $i<$section_length; $i++){
+            $word_length = mt_rand(3,10);
+            $section .= $this->getWord($word_length) . ' ';
+        }
+
+        $section = substr($section,0,-1);
+        return $section .= '.';
+    }
+
+    private function getParagraph($length)
+    {
+        $paragraph = '';
+
+        for($i=0; $i<$length; $i++){
+            $paragraph .= $this->getLorem(4,10);
+        }
+
+        $paragraph .= '\r\n';
+        return $paragraph;
+
+    }
+
+    private function getArticle($length)
+    {
+        $article = '';
+        for($i=0; $i<$length;$i++){
+            $article .= $this->getParagraph(mt_rand(3,5));
+        }
+        return $article;
     }
 
     private function getImage()
@@ -364,6 +386,36 @@ class ApiController extends Controller
                         'clicks'=>mt_rand(0,999),
                         'stars'=>mt_rand(0,100)
                     ],
+                ]
+            ];
+        }
+    }
+
+    public function getOneNews(Request $request,$id)
+    {
+        $input = $request->input();
+
+        if(!$id){
+            return [
+                'status'=>1,
+                'message'=>'id值错误!',
+                'data'=>[]
+            ];
+        }else if(!isset($input['token'])){
+            return [
+                'status'=>1,
+                'message'=>'token不能为空!',
+                'data'=>[]
+            ];
+        }else{
+            return [
+                'status'=>0,
+                'message'=>'请求成功!',
+                'data'=>[
+                    'id'=>$id,
+                    'title'=>$this->getLorem(5,10),
+                    'published_at'=>date('Y-m-d H:i:s',time()),
+                    'content'=>$this->getArticle()
                 ]
             ];
         }
