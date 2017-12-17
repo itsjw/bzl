@@ -268,8 +268,11 @@ class ApiController extends Controller
 
     }
 
-    private function getArticle($length)
+    private function getArticle($length='')
     {
+        if(!$length){
+            $length = mt_rand(3,5);
+        }
         $article = '';
         for($i=0; $i<$length;$i++){
             $article .= $this->getParagraph(mt_rand(3,5));
