@@ -33,3 +33,7 @@ Route::get('/index/news','ApiController@getIndexNews');
 
 // 热门活动
 Route::get('/index/rmhdlist','ApiController@getIndexRmhdlist');
+
+
+// 热门活动
+Route::get('/index/service','ApiController@getIndexRmhdlist');
