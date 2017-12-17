@@ -30,3 +30,6 @@ Route::post('/auth/register','ApiController@register');
 
 // 首页北中快讯
 Route::get('/index/news','ApiController@getIndexNews');
+
+// 热门活动
+Route::get('/index/rmhdlist','ApiController@getIndexRmhdlist');

@@ -177,4 +177,61 @@ class ApiController extends Controller
             ];
         }
     }
+
+    /**
+     * 首页热门活动
+     */
+    public function getIndexRmhdlist(Request $request)
+    {
+        $input = $request->input();
+        if(!isset($input['token'])){
+            return [
+                'code'=>1,
+                'message'=>'token不能为空!',
+                'data'=>''
+            ];
+        }else{
+            return [
+                'code'=>0,
+                'message'=>'请求成功!',
+                'data'=>[
+                    [
+                        'image'=>'https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=4f5175ce9e0a304e4d22a6fae1c9a7c3/ac4bd11373f08202e8e190f542fbfbedaa641b8c.jpg',
+                        'title'=>'网际飞侠-情怀餐厅',
+                        'price'=>mt_rand(1000,20000),
+                        'people'=>mt_rand(10,2000),
+                        'id'=>mt_rand(1,10)
+                    ],
+                    [
+                        'image'=>'https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=faf482cc94510fb367197197e933c893/b999a9014c086e0601acf33e08087bf40ad1cbbb.jpg',
+                        'title'=>'网际飞侠-印度小孩-印度生活',
+                        'price'=>mt_rand(1000,20000),
+                        'people'=>mt_rand(10,2000),
+                        'id'=>mt_rand(1,10)
+                    ],
+                    [
+                        'image'=>'https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=acf00ce8ba1bb0519024b528067bda77/0df3d7ca7bcb0a46f7988bf36263f6246a60af45.jpg',
+                        'title'=>'网际飞侠-新疆伊利市那拉提草原风景区自由跑酷运动',
+                        'price'=>mt_rand(1000,20000),
+                        'people'=>mt_rand(10,2000),
+                        'id'=>mt_rand(1,10)
+                    ],
+                    [
+                        'image'=>'https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=d04061e9dbc8a786a12a4c0e5709c9c7/5bafa40f4bfbfbed5e3bf76c72f0f736afc31f47.jpg',
+                        'title'=>'美国亚利桑那州风景区',
+                        'price'=>mt_rand(1000,20000),
+                        'people'=>mt_rand(10,2000),
+                        'id'=>mt_rand(1,10)
+                    ],
+                    [
+                        'image'=>'https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=c4d77472f21986185e47e9847aec2e69/7acb0a46f21fbe091caf320761600c338744ad34.jpg',
+                        'title'=>'清新竹林,沁人心脾',
+                        'price'=>mt_rand(1000,20000),
+                        'people'=>mt_rand(10,2000),
+                        'id'=>mt_rand(1,10)
+                    ],
+                ]
+            ];
+        }
+    }
 }
