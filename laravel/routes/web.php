@@ -37,3 +37,6 @@ Route::get('/index/rmhdlist','ApiController@getIndexRmhdlist');
 
 // 热门活动
 Route::get('/index/service','ApiController@getIndexRmhdlist');
+
+// 北中快讯列表也
+Route::get('/news','ApiController@getNews');
