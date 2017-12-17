@@ -24,3 +24,6 @@ Route::post('/auth/code/send','ApiController@sendCode');
 
 // 验证验证码
 Route::post('/auth/code/verify','ApiController@verifyCode');
+
+// 注册接口
+Route::post('/auth/register','ApiController@register');

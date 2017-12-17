@@ -24,7 +24,7 @@ class ApiController extends Controller
                 'message'=>'密码不能为空!',
                 'data'=>[]
             ];
-        }else if($input['username'] != 'admin'){
+        }else if($input['username'] != '18888888888'){
             return [
                 'status'=>-1,
                 'message'=>'用户名不存在!',
@@ -34,6 +34,12 @@ class ApiController extends Controller
             return [
                 'status'=>-2,
                 'message'=>'密码错误!',
+                'data'=>[]
+            ];
+        }else if($input['protocol'] != 1){
+            return [
+                'status'=>1,
+                'message'=>'用户没有同意用户协议!',
                 'data'=>[]
             ];
         }else{
@@ -94,5 +100,57 @@ class ApiController extends Controller
                 'token'=>'admin'
             ]
         ];
+    }
+
+    /**
+     * 注册接口
+     */
+    public function register(Request $request)
+    {
+        $input = $request->input();
+        if(!isset($input['phone'])){
+            return [
+                'status'=>1,
+                'message'=>'手机号码不能为空!',
+                'data'=>[]
+            ];
+        }else if(!isset($input['password'])){
+            return [
+                'status'=>1,
+                'message'=>'密码不能为空!',
+                'data'=>[]
+            ];
+        }else if(!isset($input['password_confirmation'])){
+            return [
+                'status'=>1,
+                'message'=>'确认密码不能为空!',
+                'data'=>[]
+            ];
+        }else if(!isset($input['code'])){
+            return [
+                'status'=>1,
+                'message'=>'验证码不能为空!',
+                'data'=>[]
+            ];
+        }else if($input['password'] != $input['password_confirmation']){
+            return [
+                'status'=>2,
+                'message'=>'两次输入的密码不一致!',
+                'data'=>[]
+            ];
+        }else if($input['code'] != '123456'){
+            return [
+                'status'=>2,
+                'message'=>'验证码错误!',
+                'data'=>[]
+            ];
+        }else{
+            return [
+                'status'=>0,
+                'message'=>'注册成功!',
+                'data'=>[]
+            ];
+        }
+
     }
 }
