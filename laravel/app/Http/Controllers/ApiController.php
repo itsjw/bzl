@@ -153,4 +153,28 @@ class ApiController extends Controller
         }
 
     }
+
+    /**
+     * 首页背中快讯接口
+     */
+    public function getIndexNews(Request $request)
+    {
+        $input = $request->input();
+        if(!isset('token')){
+            return [
+                'status'=>1,
+                'message'=>'token不能为空!',
+                'data'=>[]
+            ];
+        }else{
+            return [
+                'status'=>0,
+                'message'=>'获取成功!',
+                'data'=>[
+                    ['title'=>'美韩举行大规模军演,声称有可能进行斩首心动','id'=>1],
+                    ['title'=>'中国驻美大使称:美国军舰入台之时,就是我解放军解放台湾之日','id'=>2]
+                ]
+            ];
+        }
+    }
 }

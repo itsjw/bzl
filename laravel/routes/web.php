@@ -27,3 +27,6 @@ Route::post('/auth/code/verify','ApiController@verifyCode');
 
 // 注册接口
 Route::post('/auth/register','ApiController@register');
+
+// 首页北中快讯
+Route::get('/index/news','ApiController@getIndexNews');
