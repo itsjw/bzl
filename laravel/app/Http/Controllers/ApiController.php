@@ -263,7 +263,7 @@ class ApiController extends Controller
             $paragraph .= $this->getLorem(4,10);
         }
 
-        $paragraph .= '\r\n';
+        $paragraph .= '<br>';
         return $paragraph;
 
     }
