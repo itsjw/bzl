@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Integer;
 
 class ApiController extends Controller
 {
@@ -235,12 +236,12 @@ class ApiController extends Controller
         }
     }
 
-    private function getLorem(x,y)
+    private function getLorem(Integer $x,Integer $y)
     {
         $string = 'abcdefghijklmnopqrstuvwxyz';
 
         $section = '';
-        $section_length = mt_rand(x,y);
+        $section_length = mt_rand($x,$y);
         for($i=0;$i<=$section_length-1;$i++){
             $word = '';
             $word_length = mt_rand(4,10);
