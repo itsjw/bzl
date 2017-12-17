@@ -37,12 +37,6 @@ class ApiController extends Controller
                 'message'=>'密码错误!',
                 'data'=>[]
             ];
-        }else if($input['protocol'] != 1){
-            return [
-                'status'=>1,
-                'message'=>'用户没有同意用户协议!',
-                'data'=>[]
-            ];
         }else{
             return [
                 'status'=>0,
