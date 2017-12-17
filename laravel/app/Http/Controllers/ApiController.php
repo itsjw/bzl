@@ -230,22 +230,29 @@ class ApiController extends Controller
         }
     }
 
+    private function getWord($length)
+    {
+	$base = 'abcdefghijklmnopqrstuvwxyz';
+	$word = '';
+
+	for($i=0; $i<$length; $i++){
+		$word .= $base{mt_rand(0,25)};    	    
+	}	
+	return $word;
+    }
+
     private function getLorem($x,$y)
     {
-        $string = 'abcdefghijklmnopqrstuvwxyz';
+	$section = '';
+	
+	$section_length = mt_rand($x,$y);
+	for($i=0; $i<$section_length; $i++){
+		$word_length = mt_rand(3,10);
+		$section .= $this->getWord($word_length) . ' ';	
+	}	
 
-        $section = '';
-        $section_length = mt_rand($x,$y);
-        for($i=0;$i<=$section_length-1;$i++){
-            $word = '';
-            $word_length = mt_rand(4,10);
-            for($i = 0;$i<= $word_length-1;$i++){
-                $word .= $string{mt_rand(0,25)};
-            }
-            $section .= $word . '';
-        }
-        $section .= '.';
-        return $section;
+	$section = substr($section,0,-1);
+	return $section .= '.';
     }
 
     private function getImage()
