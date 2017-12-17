@@ -236,7 +236,7 @@ class ApiController extends Controller
         }
     }
 
-    private function getLorem(Integer $x,Integer $y)
+    private function getLorem($x,$y)
     {
         $string = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -245,7 +245,7 @@ class ApiController extends Controller
         for($i=0;$i<=$section_length-1;$i++){
             $word = '';
             $word_length = mt_rand(4,10);
-            for($i = 0,$i<= $word_length-1;$i++){
+            for($i = 0;$i<= $word_length-1;$i++){
                 $word .= $string{mt_rand(0,25)};
             }
             $section .= $word . '';
