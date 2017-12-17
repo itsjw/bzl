@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * 用户登录
+ */
+Route::post('/auth/login','ApiController@login');
+
+// 退出
+Route::post('/auth/logout','ApiController@logout');
+
+// 发送验证码
+Route::post('/auth/code/send','ApiController@sendCode');
+
+// 验证验证码
+Route::post('/auth/code/verify','ApiController@verifyCode');
