@@ -512,4 +512,23 @@ class ApiController extends Controller
             ];
         }
     }
+
+
+    public function getProfile()
+    {
+        return [
+            'status'=>0,
+            'message'=>'请求成功!',
+            'data'=>[
+                'nickname'=>$this->getLorem(2,3),
+                'avatar'=>$this->avatar(),
+                'level'=>mt_rand(1,10),
+                'points'=>mt_rand(1,2000),
+                'stars'=>mt_rand(1,100),
+                'orders'=>mt_rand(1,100),
+                'activities'=>mt_rand(1,200),
+                'services'=>mt_rand(1,200)
+            ]
+        ];
+    }
 }

@@ -52,3 +52,7 @@ Route::get('/services','ApiController@getIndexRmhdlist');
 
 // 金牌服务
 Route::get('/jpservices','ApiController@getIndexRmhdlist');
+
+
+// 用户
+Route::get('/profile','ApiController@getProfile');
