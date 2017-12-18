@@ -195,35 +195,40 @@ class ApiController extends Controller
                         'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
-                        'id'=>mt_rand(1,10)
+                        'id'=>mt_rand(1,10),
+                        'comment'=>$this->getLorem(10,15)
                     ],
                     [
                         'image'=>$this->getImage(),
                         'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
-                        'id'=>mt_rand(1,10)
+                        'id'=>mt_rand(1,10),
+                        'comment'=>$this->getLorem(10,15)
                     ],
                     [
                         'image'=>$this->getImage(),
                         'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
-                        'id'=>mt_rand(1,10)
+                        'id'=>mt_rand(1,10),
+                        'comment'=>$this->getLorem(10,15)
                     ],
                     [
                         'image'=>$this->getImage(),
                         'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
-                        'id'=>mt_rand(1,10)
+                        'id'=>mt_rand(1,10),
+                        'comment'=>$this->getLorem(10,15)
                     ],
                     [
                         'image'=>$this->getImage(),
                         'title'=>$this->getLorem(5,15),
                         'price'=>mt_rand(1000,20000),
                         'people'=>mt_rand(10,2000),
-                        'id'=>mt_rand(1,10)
+                        'id'=>mt_rand(1,10),
+                        'comment'=>$this->getLorem(10,15)
                     ],
                 ]
             ];

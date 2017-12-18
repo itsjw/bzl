@@ -37,8 +37,7 @@ Route::get('/rmhdlist','ApiController@getIndexRmhdlist');
 // 背中快讯详情页
 Route::get('/news/{id}','ApiController@getOneNews');
 
-
-// 热门活动
+// 金牌服务
 Route::get('/index/service','ApiController@getIndexRmhdlist');
 
 // 北中快讯列表也
@@ -46,3 +45,10 @@ Route::get('/news','ApiController@getNews');
 
 // 活动列表页 全部
 Route::get('/qbhdlist','ApiController@getQbhdlist');
+
+
+// 全部服务
+Route::get('/services','ApiController@getIndexRmhdlist');
+
+// 金牌服务
+Route::get('/jpservices','ApiController@getIndexRmhdlist');
