@@ -504,4 +504,50 @@ class ApiController extends Controller
             ]
         ];
     }
+
+
+    /**
+     * 报名活动
+     */
+    public function getBmhdlist(Request $request)
+    {
+        $input = $request->input();
+
+        if(!isset($input['token'])){
+            return [
+                'status'=>1,
+                'message'=>'token不能为空!',
+                'data'=>[]
+            ];
+        }else{
+            return [
+                'status'=>0,
+                'message'=>'请求成功!',
+                'data'=>[
+                        [
+                            'id'=>mt_rand(1,10),
+                            'title'=>$this->getLorem(5,10),
+                            'image'=>$this->getImage(),
+                            'star'=>mt_rand(0,1),
+                            'published_at'=>date('Y-m-d H:i:s',time())
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'title'=>$this->getLorem(5,10),
+                            'image'=>$this->getImage(),
+                            'star'=>mt_rand(0,1),
+                            'published_at'=>date('Y-m-d H:i:s',time())
+                        ],
+                        [
+                            'id'=>mt_rand(1,10),
+                            'title'=>$this->getLorem(5,10),
+                            'image'=>$this->getImage(),
+                            'star'=>mt_rand(0,1),
+                            'published_at'=>date('Y-m-d H:i:s',time())
+                        ],
+                ]
+            ];
+        }
+    }
+
 }
