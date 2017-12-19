@@ -45,6 +45,8 @@ Route::get('/news','ApiController@getNews');
 
 // 活动列表页 全部
 Route::get('/qbhdlist','ApiController@getQbhdlist');
+// 热门活动
+Route::get('/rmhdlist','ApiController@getQbhdlist');
 
 
 // 全部服务

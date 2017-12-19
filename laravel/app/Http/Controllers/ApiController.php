@@ -457,33 +457,6 @@ class ApiController extends Controller
                             'people'=>mt_rand(0,500),
                             'price'=>mt_rand(100,20000)
                         ],
-                        [
-                            'id'=>mt_rand(1,10),
-                            'image'=>$this->getImage(),
-                            'title'=>$this->getLorem(5,10),
-                            'subtitle'=>$this->getLorem(8,12),
-                            'tags'=>[$this->getWord(8),$this->getWord(5)],
-                            'people'=>mt_rand(0,500),
-                            'price'=>mt_rand(100,20000)
-                        ],
-                        [
-                            'id'=>mt_rand(1,10),
-                            'image'=>$this->getImage(),
-                            'title'=>$this->getLorem(5,10),
-                            'subtitle'=>$this->getLorem(8,12),
-                            'tags'=>[$this->getWord(8),$this->getWord(5)],
-                            'people'=>mt_rand(0,500),
-                            'price'=>mt_rand(100,20000)
-                        ],
-                        [
-                            'id'=>mt_rand(1,10),
-                            'image'=>$this->getImage(),
-                            'title'=>$this->getLorem(5,10),
-                            'subtitle'=>$this->getLorem(8,12),
-                            'tags'=>[$this->getWord(8),$this->getWord(5)],
-                            'people'=>mt_rand(0,500),
-                            'price'=>mt_rand(100,20000)
-                        ],
                     ],
                     'list'=>[
                         [
