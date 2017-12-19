@@ -56,3 +56,7 @@ Route::get('/jpservices','ApiController@getIndexRmhdlist');
 
 // 用户
 Route::get('/profile','ApiController@getProfile');
+
+Route::get('/profile/orders','ApiController@getProfileOrder');
+//Route::get('/profile/activities','ApiController@getProfileActivities');
+Route::get('/profile/services','ApiController@getQbhdlist');
