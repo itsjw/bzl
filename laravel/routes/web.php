@@ -71,9 +71,9 @@ Route::get('/profile/userinfo','ApiController@getProfileUserinfo');
 // 修改用户信息
 Route::post('/profile/userinfo','ApiController@postProfileUserinfo');
 
-// 活动详情
-Route::get('/activity/{id}','ApiController@getActivity');
 // 活动详情评论
 Route::get('/activity/comments','ApiController@getActivityComments');
 // 活动须知
 Route::get('/activity/hdxz','ApiController@getActivityHdxz');
+// 活动详情
+Route::get('/activity/{id}','ApiController@getActivity');
