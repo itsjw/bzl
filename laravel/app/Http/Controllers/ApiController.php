@@ -595,7 +595,7 @@ class ApiController extends Controller
                     'business'=>[
                         'avatar'=>$this->avatar(),
                         'name'=>$this->getLorem(3,4),
-                        'phone'=>$this->mt_rand(10000000000,13000000000)
+                        'phone'=>mt_rand(10000000000,13000000000)
                     ],
                     'description'=>$this->getLorem(30,40)
                 ]
