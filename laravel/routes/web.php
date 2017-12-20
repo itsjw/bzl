@@ -77,3 +77,10 @@ Route::get('/activity/comments','ApiController@getActivityComments');
 Route::get('/activity/hdxz','ApiController@getActivityHdxz');
 // 活动详情
 Route::get('/activity/{id}','ApiController@getActivity');
+
+// 服务详情评论
+Route::get('/service/comments','ApiController@getActivityComments');
+// 服务须知
+Route::get('/service/hdxz','ApiController@getActivityHdxz');
+// 服务详情
+Route::get('/service/{id}','ApiController@getActivity');
