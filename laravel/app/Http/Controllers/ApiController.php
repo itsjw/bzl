@@ -584,6 +584,8 @@ class ApiController extends Controller
                 'status'=>0,
                 'message'=>'xxxxx',
                 'data'=>[
+                    'times'=>mt_rand(1,10),
+                    'chances'=>mt_rand(100,200),
                     'image'=>$this->getImage(),
                     'title'=>$this->getLorem(3,5),
                     'subtitle'=>$this->getLorem(3,7),
@@ -597,6 +599,42 @@ class ApiController extends Controller
                     ],
                     'description'=>$this->getLorem(30,40)
                 ]
+            ]
+        ];
+    }
+
+    public function getActivityComments()
+    {
+        return [
+            'status'=>0,
+            'message'=>'请求成功!',
+            'data'=>[
+                [
+                    'avatar'=>$this->avatar(),
+                    'nickname'=>$this->getLorem(4,6),
+                    'content'=>$this->getParagraph(3),
+                    'time'=>date('Y-m-d H:i:s',time())
+
+                ],
+                [
+                    'avatar'=>$this->avatar(),
+                    'nickname'=>$this->getLorem(4,6),
+                    'content'=>$this->getParagraph(3),
+                    'time'=>date('Y-m-d H:i:s',time())
+
+                ],
+            ]
+        ];
+    }
+
+    public function getActivityHdxz()
+    {
+        return [
+            'status'=>0,
+            'message'=>'xxx',
+            'data'=>[
+                'hdxz'=>$this->getLorem(5,10),
+                'tggz'=>$this->getLorem(5,10)
             ]
         ];
     }
