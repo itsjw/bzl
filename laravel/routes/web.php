@@ -65,3 +65,6 @@ Route::get('/profile/services','ApiController@getIndexRmhdlist');
 
 // 报名活动
 Route::get('/profile/bmhdlist','ApiController@getBmhdlist');
+
+// 获取用户信息
+Route::get('/profile/userinfo','ApiController@getProfileUserinfo');

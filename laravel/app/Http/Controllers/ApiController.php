@@ -550,4 +550,13 @@ class ApiController extends Controller
         }
     }
 
+    public function getProfileUserinfo()
+    {
+        return [
+            'avatar'=>$this->avatar(),
+            'nickname'=>$this->getLorem(2,3),
+            'sex'=>mt_rand(0,1),
+            'birthday'=>date('Y-m-d H:i:s',time())
+        ];
+    }
 }
