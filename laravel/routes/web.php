@@ -68,3 +68,5 @@ Route::get('/profile/bmhdlist','ApiController@getBmhdlist');
 
 // 获取用户信息
 Route::get('/profile/userinfo','ApiController@getProfileUserinfo');
+// 修改用户信息
+Route::get('/profile/userinfo','ApiController@postProfileUserinfo');
