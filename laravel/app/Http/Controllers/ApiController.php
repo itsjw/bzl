@@ -574,4 +574,30 @@ class ApiController extends Controller
             'data'=>$input
         ];
     }
+
+    public function getActivity($id)
+    {
+        return [
+            'status'=>0,
+            'message'=>'请求成功',
+            'data'=>[
+                'status'=>0,
+                'message'=>'xxxxx',
+                'data'=>[
+                    'image'=>$this->getImage(),
+                    'title'=>$this->getLorem(3,5),
+                    'subtitle'=>$this->getLorem(3,7),
+                    'price'=>mt_rand(200,2000),
+                    'people'=>mt_rand(1,23),
+                    'endtime'=>date('Y-m-d H:i:s',time()),
+                    'business'=>[
+                        'avatar'=>$this->avatar(),
+                        'name'=>$this->getLorem(3,4),
+                        'phone'=>$this->mt_rand(10000000000,13000000000)
+                    ],
+                    'description'=>$this->getLorem(30,40)
+                ]
+            ]
+        ];
+    }
 }
